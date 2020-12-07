@@ -1,0 +1,6 @@
+
+html,main,body,section,article,div,header,nav,form,p,span,input,textarea,h1,h2,h3,h4,a,ul,ol,li,figcaption,footer,button,label{margin:0;padding:0;border:0;font-family:"Source Sans Pro",sans-serif;vertical-align:baseline;box-sizing:border-box}
+.navbar{display:flex;justify-content:space-between;align-items:center;background:#0d0d0e;color:#fff;height:60px;padding:30px 30px 10px}.navbar .logo-box{font-size:20px;font-weight:600;letter-spacing:.5px}.navbar .links{display:flex}.navbar .links div{margin-left:15px;letter-spacing:.5px}
+.main-box{display:flex;justify-content:space-between;margin:50px 30px}.main-box .left{width:20%;background:#ff0}.main-box .center{width:55%;background:#808a80}.main-box .right{width:25%;background:#ffb9ff}
+
+/*# sourceMappingURL=main.css.map*/

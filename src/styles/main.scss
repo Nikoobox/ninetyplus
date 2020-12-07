@@ -1,0 +1,17 @@
+.main-box{
+    display:flex;
+    justify-content: space-between;
+    margin:50px 30px;
+    .left{
+        width:20%;
+        background:yellow;
+    }
+    .center{
+        width:55%;
+        background:rgb(128, 138, 128)
+    }
+    .right{
+        width:25%;
+        background: rgb(255, 185, 255)
+    }
+}
