@@ -18,7 +18,8 @@ When user clickes on specific game, game info will be shown as following
     <img width="500" src="./assets/layout2.png">
 </div>
 
-### Navbar will have logo, app name and links the Github, LinkedIn and Personal website.
+### Navbar 
+* Will have logo, app name and links the Github, LinkedIn and Personal website.
 
 ## Libraries and Languages
 
