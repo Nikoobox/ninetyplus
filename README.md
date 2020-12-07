@@ -13,7 +13,7 @@ First will be the main home page as shown below.
     <img width="500" src="./assets/layout.png">
 </div>
 
-When user clickes on specific game, game info will be shown as following
+When user clicks on specific game, game info will be shown as following
 <div align="center">
     <img width="500" src="./assets/layout2.png">
 </div>
