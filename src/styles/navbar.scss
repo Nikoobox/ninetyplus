@@ -5,15 +5,17 @@
     background:#0D0D0E;
     color:white;
     height:60px;
-    padding: 25px 30px 10px;
+    padding: 30px 30px 10px;
     .logo-box{
         font-size:20px;
         font-weight:600;
+        letter-spacing:0.5px;
     }
     .links{
         display:flex;
         div{
-            margin-left:10px;
+            margin-left:15px;
+            letter-spacing:0.5px;
         }
     }
     
