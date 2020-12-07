@@ -1,7 +1,7 @@
 # SeeWhoScored
 
 ## Background and Overview 
-Site for live soccer scores from across the world. Get lifetime game data, teams line-ups, formations and team news.
+Site for live soccer scores from across the world. Get livetime game data, teams line-ups, formations and team statistics.
 Data and statistic will be presented with D3.js Javascript library for producing dynamic, interactive data.
 
 
@@ -26,7 +26,7 @@ When user clickes on specific game, game info will be shown as following
 * API-Football to collect the data
 * Javascript
 * HTML5
-* CSS3
+* CSS3/SCSS
 
 ## Features
 * Visitors can see live scores for the selected league
