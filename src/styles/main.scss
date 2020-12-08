@@ -1,17 +1,96 @@
 .main-box{
     display:flex;
     justify-content: space-between;
-    margin:50px 30px;
+    margin:20px 30px;
     .left{
         width:20%;
-        background:yellow;
+        background:#212322;
+        color:white;
     }
     .center{
         width:55%;
-        background:rgb(128, 138, 128)
+        background:rgb(232, 232, 232);
+        .section-name{
+            text-align: center;
+        }
+        .fixture-box{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+            margin:10px 0;
+            .team1-box{
+                width:300px;
+                display:flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right:10px;
+                .name{
+                    width:100%;
+                    text-align: end;
+                    margin-right:8px;
+                    font-size:18px;
+                }
+                .logo{
+                    img{
+                        width:30px;
+                    }
+                }
+            }
+            .vs{
+                color:#747474;
+                font-size:14px;
+            }
+            .score-box{
+                display:flex;
+                .score{
+                    background:black;
+                    color:white;
+                }
+            }
+            .team2-box{
+                display:flex;
+                width:300px;
+                justify-content: flex-start;
+                align-items: center;
+                margin-left:10px;
+                .name{
+                    width:100%;
+                    text-align: start;
+                    margin-left:8px;
+                    font-size:18px;
+                }
+                .logo{
+                    img{
+                        width:30px;
+                    }
+                }
+            }
+           
+        }
     }
     .right{
         width:25%;
-        background: rgb(255, 185, 255)
+        background: #f5b7cd;
+        .name{
+            text-align: center;
+        }
+        .team-standing-box{
+            margin: 10px 30px;
+            .team-standing-row{
+                .team-rank-box{
+                    .team-rank{
+                        width:20px;
+                        text-align: end;
+                        margin-right:10px;
+                    }
+                    display:flex;
+                }
+                margin: 2px;
+                display:flex;
+                justify-content: space-between;
+            }
+
+        }
     }
 }
