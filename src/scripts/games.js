@@ -1,4 +1,5 @@
 import axios from "axios";
+import getLiveGamesInfo from './livegames';
 
 const renderGames = () => {
     const allGamesDiv = document.getElementById("all-games")
@@ -28,14 +29,16 @@ const renderGames = () => {
             const logo2 = fix.teams.away.logo;
             const score1 = fix.goals.home;
             const score2 = fix.goals.away;
-            const gameStatus = fix.fixture.status.short; 
-            
+            const gameStatus = fix.fixture.status.short;
+             
+         
             const fixtureRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
+            fixtureRowDiv.addEventListener('click', () => getLiveGamesInfo());
 
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');
-            // if game is live then show score, otherwise show vs
+            // if game is live then show 'score', otherwise show 'vs'
             const temp = gameLiveStatus.includes(gameStatus) ? `
             <div class="score-box">
                 <div class='score'>${score1}</div>
@@ -53,20 +56,6 @@ const renderGames = () => {
                 <div class="logo"><img src="${logo2}"/></div>
                 <div class="name">${team2}</div>
             </div>`: "";
-
-            // fixtureRowDiv.innerHTML = gameLiveStatus.includes(gameStatus) ? `
-            // <div class='team1-box'>
-            //     <div class="name">${team1}</div>
-            //     <div class="logo"><img src="${logo1}"/></div>
-            // </div>
-            // <div class="score-box">
-            //     <div class='score'>${score1}</div>
-            //     <div class='score'>${score2}</div>
-            // </div>
-            // <div class='team2-box'>
-            //     <div class="logo"><img src="${logo2}"/></div>
-            //     <div class="name">${team2}</div>
-            // </div>`: "";
 
             allGamesBoxDiv.appendChild(fixtureRowDiv);
         });

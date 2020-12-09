@@ -19,6 +19,11 @@
             justify-content: center;
             width:100%;
             margin:10px 0;
+            transition: all 0.3s;
+            &:hover{
+                cursor: pointer;
+                background:rgb(225, 225, 225);
+            }
             .team1-box{
                 width:300px;
                 display:flex;
@@ -46,6 +51,8 @@
                 .score{
                     background:black;
                     color:white;
+                    padding:px;
+                    margin:1px;
                 }
             }
             .team2-box{

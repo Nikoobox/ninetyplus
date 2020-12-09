@@ -48,21 +48,44 @@ app.get("/games", (req, res) => {
     });
 });
 
+app.get("/livegames", (req, res) => {
+    // fetch("https://v3.football.api-sports.io/fixtures?league=39&season=2020&live=all", {
+    fetch("https://v3.football.api-sports.io/fixtures?&season=2020&live=all", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": `${process.env.API_KEY}`
+        }
+    }).then(response => {
+        return response.text();
+    }).then(body => {
+        let results = JSON.parse(body);
+        console.log(results); // logs to server
+        res.send(results); // sends to frontend
+    }).catch(err => {
+        console.log(err);
+    });
+});
 
-// create a search route
-// app.get("/search", (request, response) => {
-//     console.log(request.query.query);
-//     fetch(
-//         `http://openlibrary.org/search.json?q=${request.query.query || undefined}`
-//     )
-//         .then((response) => {
-//             return response.text();
-//         })
-//         .then((body) => {
-//             let results = JSON.parse(body);
-//             response.send(results);
-//         });
-// });
+app.get("/game", (req, res) => {
+    // fetch("https://v3.football.api-sports.io/fixtures?league=39&season=2020&live=all", {
+    fetch("https://v3.football.api-sports.io/fixtures/lineups?fixture=157125", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": `${process.env.API_KEY}`
+        }
+    }).then(response => {
+        return response.text();
+    }).then(body => {
+        let results = JSON.parse(body);
+        console.log(results); // logs to server
+        res.send(results); // sends to frontend
+    }).catch(err => {
+        console.log(err);
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log(__dirname);

@@ -2,6 +2,7 @@ import "./styles/index.scss";
 import "./styles/reset.scss";
 import "./styles/navbar.scss";
 import './styles/main.scss';
+import './styles/game.scss';
 
 // import Test from './scripts/test';
 
@@ -17,3 +18,5 @@ import renderGames from "./scripts/games";
 window.addEventListener("DOMContentLoaded", () => {
     renderGames();
 });
+
+// import renderGameById from './scripts/game';
