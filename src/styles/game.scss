@@ -7,14 +7,71 @@
         width:50%;
         display:flex;
         flex-direction: column;
+        #team-1-box{
+            .team-1-header-box{
+                margin-bottom:5px;
+                font-size: 18px;
+            }
+            .team-1{
+                display:flex;
+                .number{width:30px;}
+            }
+        }
+        #team-2-box{
+            margin-top:25px;
+            .team-2-header-box{
+                margin-bottom:5px;
+                font-size: 18px;
+            }
+            .team-2{
+                display:flex;
+                .number{width:30px;}
+            }
+        }
     }
-    .field-img{
+    .field-box{
         display:flex;
-        align-items:center;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        img{
-            width:100%;
-            height: 400px;
+        .field-img{
+            position:relative;
+            .rows{
+                height:55px;
+                width:100%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+            }
+            .image{
+                width:330px;
+                height: 440px;
+            }
+            .gk-1{
+                top:0;
+            }
+            .def-1{
+                top:55px;
+            }
+            .mid-1{
+                top:110px;
+            }
+            .fwd-1{
+                top:165px;
+            }
+            .gk-2{
+                top:220px;
+            }
+            .def-2{
+                top:275px;
+            }
+            .mid-2{
+                top:330px;
+            }
+            .fwd-2{
+                top:385px;
+            }
         }
     }
 }
