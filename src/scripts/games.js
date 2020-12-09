@@ -1,5 +1,5 @@
 import axios from "axios";
-import getLiveGamesInfo from './livegames';
+import renderGameById from './game';
 
 const renderGames = () => {
     const allGamesDiv = document.getElementById("all-games")
@@ -34,7 +34,7 @@ const renderGames = () => {
          
             const fixtureRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
-            fixtureRowDiv.addEventListener('click', () => getLiveGamesInfo());
+            fixtureRowDiv.addEventListener('click', () => renderGameById());
 
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');
