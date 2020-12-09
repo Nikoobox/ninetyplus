@@ -25,17 +25,27 @@ const renderGameById = () => {
         `
     <div class="field-img">
         <img class="image" src="${field}"/>
-        <div class='gk-1 rows'>goalkiper-1</div>
-        <div class='def-1 rows'>defender-1</div>
-        <div class='mid-1 rows'>midfielder-1</div>
-        <div class='fwd-1 rows'>forward-1</div>
-        <div class='gk-2 rows'>goalkiper-2</div>
-        <div class='def-2 rows'>defender-2</div>
-        <div class='mid-2 rows'>midfielder-2</div>
-        <div class='fwd-2 rows'>forward-2</div>
+        <div id='gk-1' class='rows'></div>
+        <div id='def-1' class='rows'></div>
+        <div id='mid-1' class='rows'></div>
+        <div id='fwd-1' class='rows'></div>
+        <div id='fwd-2' class='rows'></div>
+        <div id='mid-2' class='rows'></div>
+        <div id='def-2' class='rows'></div>
+        <div id='gk-2' class='rows'></div>
     </div>
     `;
+
     oneGameContentDiv.append(fieldDiv);
+    const gk1Div = document.getElementById("gk-1");
+    const def1Div = document.getElementById("def-1");
+    const mid1Div = document.getElementById("mid-1");
+    const fwd1Div = document.getElementById("fwd-1");
+    const gk2Div = document.getElementById("gk-2");
+    const def2Div = document.getElementById("def-2");
+    const mid2Div = document.getElementById("mid-2");
+    const fwd2Div = document.getElementById("fwd-2");
+
     //adding players inside squads section - left of field
     const team1Div = document.getElementById("team-1-box");
         team1Div.innerHTML = `
@@ -59,8 +69,28 @@ const renderGameById = () => {
                     <div class='name'>${plr.player.name}</div> 
                     <div class='pos'>  (${plr.player.pos})</div>
                 `
-
-                team1Div.appendChild(playerDiv)
+                if(plr.player.pos === 'G'){
+                    const div = document.createElement('div');
+                    div.classList.add('pl1')
+                    div.innerText= plr.player.number;
+                    gk1Div.append(div);
+                } else if (plr.player.pos === 'D'){
+                    const div = document.createElement('div');
+                    div.classList.add('pl1')
+                    div.innerText = plr.player.number;
+                    def1Div.append(div);
+                } else if (plr.player.pos === 'M') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl1')
+                    div.innerText = plr.player.number;
+                    mid1Div.append(div);
+                } else if (plr.player.pos === 'F') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl1')
+                    div.innerText = plr.player.number;
+                    fwd1Div.append(div);
+                }
+                team1Div.appendChild(playerDiv);
             } else {
                 const playerDiv = document.createElement('div');
                 playerDiv.classList.add('team-2')
@@ -69,12 +99,31 @@ const renderGameById = () => {
                     <div class='name'>${plr.player.name}</div> 
                     <div class='pos'>  (${plr.player.pos})</div>
                 `
+                if (plr.player.pos === 'G') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl2')
+                    div.innerText = plr.player.number;
+                    gk2Div.append(div);
+                } else if (plr.player.pos === 'D') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl2')
+                    div.innerText = plr.player.number;
+                    def2Div.append(div);
+                } else if (plr.player.pos === 'M') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl2')
+                    div.innerText = plr.player.number;
+                    mid2Div.append(div);
+                } else if (plr.player.pos === 'F') {
+                    const div = document.createElement('div');
+                    div.classList.add('pl2')
+                    div.innerText = plr.player.number;
+                    fwd2Div.append(div);
+                }
                 team2Div.appendChild(playerDiv)
             }
         })
     })
-
-        
 
     }).catch(err => {
         console.log(err)
