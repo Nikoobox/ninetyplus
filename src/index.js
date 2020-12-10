@@ -19,7 +19,7 @@ import renderStandings from "./scripts/standings";
 // request to for all upcoming weekend fixtures
 
 window.addEventListener("DOMContentLoaded", () => {
-    // renderGames();
+    renderGames();
     renderGameStat()
 });
 

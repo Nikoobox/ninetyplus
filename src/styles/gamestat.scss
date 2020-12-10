@@ -1,15 +1,64 @@
-  .game-stat-box{
-        width:30%;
-        .stat-box{
-            #stat-1-box{
-                width:200px;
-                border: 1px solid white;
-                .bar{
-                    fill:white;
-                }
+.game-stat-box{
+    
+    .stat-box{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        .stat-name{
+            margin-bottom: 10px;;
+        }
+        #shotsOnProgress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            #shotsOn {
+                width: 1%;
+                height: 10px;
+                background-color: #4CAF50;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
             }
-            #stat-2-box{
-                
+        }
+        #shotsOffProgress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            #shotsOff {
+                width: 1%;
+                height: 10px;
+                background-color: #4CAF50;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+        #foulsProgress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            #fouls {
+                width: 1%;
+                height: 10px;
+                background-color: #4CAF50;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+        #ycProgress {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            #yc {
+                width: 1%;
+                height: 10px;
+                background-color: #4CAF50;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
             }
         }
     }
+}
+
+
+
+
