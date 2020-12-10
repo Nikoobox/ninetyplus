@@ -3,16 +3,16 @@ import axios from "axios";
 const renderGameStat = () => {
     console.log('HI FROM GAME STAT');
     // console.log(d3);
-    // const oneGameContentDiv = document.getElementById("one-game");
+    const oneGameContentDiv = document.getElementById("one-game");
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");
     // testBoxDiv.classList.add("test-box");
-    // oneGameContentDiv.append(gameStatDiv);
     axios.get(`/gamestat/?fixtureId=${157124}`).then((res) => {
         console.log(res.data.response);
         const gameStatDiv = document.createElement('div');
         gameStatDiv.classList.add('game-stat-box');
         standingsDiv.append(gameStatDiv);
+        oneGameContentDiv.append(gameStatDiv);
         const teamsStat = res.data.response;
         const possession = [];
         const shotsOn = [];
@@ -42,7 +42,7 @@ const renderGameStat = () => {
         console.log(possession)
         gameStatDiv.innerHTML =
             `
-            <div>Game Statistics</div>
+            <div name='game-stat-title'>Game Statistics</div>
             <div class='stat-box'>
                 <div id="possProgress">
                     <div id="poss"></div> 

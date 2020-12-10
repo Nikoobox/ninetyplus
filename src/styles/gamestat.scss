@@ -1,6 +1,14 @@
 .game-stat-box{
-    
+    width:240px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    .game-stat-title{
+        margin-top:20px;
+        font-size:18px;
+    }
     .stat-box{
+        width:100%;
         margin:20px;
         display:flex;
         flex-direction:column;
@@ -11,7 +19,7 @@
         }
         #possProgress {
             width: 100%;
-            background-color: $mainDarkGrey;
+            background-color: $mainPink;
             border-radius: 5px;
             #poss {
                 width: 1%;
@@ -23,11 +31,11 @@
         }
         #shotsOnProgress {
             width: 100%;
-            background-color: $mainDarkGrey;
+            background-color: $mainPink;
             border-radius: 5px;
             #shotsOn {
                 width: 1%;
-                height: 10px;
+                height: 15px;
                 background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
@@ -35,11 +43,11 @@
         }
         #shotsOffProgress {
             width: 100%;
-            background-color: $mainDarkGrey;
+            background-color: $mainPink;
             border-radius: 5px;
             #shotsOff {
                 width: 1%;
-                height: 10px;
+                height: 15px;
                 background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
@@ -47,11 +55,11 @@
         }
         #foulsProgress {
             width: 100%;
-            background-color:$mainDarkGrey;
+            background-color:$mainPink;
             border-radius: 5px;
             #fouls {
                 width: 1%;
-                height: 10px;
+                height: 15px;
                 background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
@@ -59,11 +67,11 @@
         }
         #ycProgress {
             width: 100%;
-            background-color: $mainDarkGrey;
+            background-color: $mainPink;
             border-radius: 5px;
             #yc {
                 width: 1%;
-                height: 10px;
+                height: 15px;
                 background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;

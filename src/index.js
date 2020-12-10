@@ -11,16 +11,16 @@ import renderStandings from "./scripts/standings";
 
 
 // request to update standings table
-// window.addEventListener("DOMContentLoaded", () => {
-//     renderStandings();
-// });
+window.addEventListener("DOMContentLoaded", () => {
+    // renderStandings();
+});
 
 
 // request to for all upcoming weekend fixtures
 
 window.addEventListener("DOMContentLoaded", () => {
     renderGames();
-    renderGameStat()
+    // renderGameStat()
 });
 
 // import renderGameById from './scripts/game';

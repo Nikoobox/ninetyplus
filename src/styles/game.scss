@@ -9,23 +9,49 @@
         flex-direction: column;
         #team-1-box{
             .team-1-header-box{
-                margin-bottom:5px;
-                font-size: 18px;
+                display:flex;
+                align-items: center;
+                // margin-bottom:5px;
+                .name{
+                    font-size: 18px;
+                    border-bottom: 4px solid $mainLightBlack;
+                }
+                .logo{
+                    img{
+                        width:40px;
+                        margin-left:10px;
+                    }
+                }
             }
             .team-1{
+                margin-bottom:1px;
+                font-size:15px;
                 display:flex;
-                .number{width:30px;}
+                .number{width:30px; color:$mainDarkGrey}
             }
         }
         #team-2-box{
-            margin-top:25px;
+            margin-top:5px;
             .team-2-header-box{
-                margin-bottom:5px;
-                font-size: 18px;
+                display:flex;
+                align-items: center;
+                // margin-bottom:5px;
+                .name{
+                    font-size: 18px;
+                    border-bottom: 4px solid $mainPink;
+                }
+                .logo{
+                    img{
+                        width:40px;
+                        margin-left:10px;
+                    }
+                }
             }
             .team-2{
+                margin-bottom:1px;
+                font-size:15px;
                 display:flex;
-                .number{width:30px;}
+                .number{width:30px;color:$mainDarkGrey}
             }
         }
     }

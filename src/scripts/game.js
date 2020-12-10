@@ -60,13 +60,15 @@ const renderGameById = () => {
         const team1Div = document.getElementById("team-1-box");
             team1Div.innerHTML = `
                         <div class='team-1-header-box'>
-                        ${res.data.response[0].team.name} -Home
+                            <div class='name'>${res.data.response[0].team.name} -Home</div>
+                            <div class='logo'><img src="${res.data.response[0].team.logo}"</div> 
                         </div>`
 
         const team2Div = document.getElementById("team-2-box");
             team2Div.innerHTML = `
                         <div class='team-2-header-box'>
-                        ${res.data.response[1].team.name} -Away
+                            <div class='name'>${res.data.response[1].team.name} -Away</div>
+                            <div class='logo'><img src="${res.data.response[1].team.logo}"</div> 
                         </div>`
 
         res.data.response.forEach((command, cidx) => {
@@ -82,6 +84,7 @@ const renderGameById = () => {
                     if(plr.player.pos === 'G'){
                         const div = document.createElement('div');
                         div.classList.add('pl1')
+                        div.classList.add('pl-select')
                         div.innerText= plr.player.number;
                         gk1Div.append(div);
                     } else if (plr.player.pos === 'D'){
@@ -135,8 +138,10 @@ const renderGameById = () => {
             })
         })
         renderGameStat()
-    // }).then(() => {
-    //     renderGameStat();
+
+        // const plSelector = document.querySelector(".pl-select")
+        // plSelector.addEventListener('click', () => renderGameById());
+
     }).catch(err => {
         console.log(err)
     });
