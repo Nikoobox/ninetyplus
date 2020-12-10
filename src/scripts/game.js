@@ -1,9 +1,11 @@
 import axios from "axios";
 import field from '../../assets/field.png';
 import renderGameStat from './gamestat';
+import renderPlayerStat from './renderPlayerStat';
 
-const renderGameById = () => {
+const renderGameById = (fixtureId) => {
     console.log('Hi from game!');
+    console.log(fixtureId)
     const leagueInfoDiv = document.getElementById("league-info");
     leagueInfoDiv.innerHTML = "<div></div>";
     leagueInfoDiv.classList.remove('left');
@@ -11,7 +13,7 @@ const renderGameById = () => {
     const allGamesContentDiv = document.getElementById("all-games");
     allGamesContentDiv.innerHTML = "<div id='one-game'></div>";
 
-    axios.get('./game').then((res) => {
+    axios.get(`./game?fixtureId=${fixtureId}`).then((res) => {
         console.log(res.data.response);
     
         const oneGameContentDiv = document.getElementById("one-game");
@@ -20,7 +22,6 @@ const renderGameById = () => {
         
         fieldDiv.classList.add('field-box');
         squadsDiv.classList.add('squad-box');
-        
         
         squadsDiv.innerHTML =
             `
@@ -46,7 +47,6 @@ const renderGameById = () => {
 
         oneGameContentDiv.append(fieldDiv);
         
-
         const gk1Div = document.getElementById("gk-1");
         const def1Div = document.getElementById("def-1");
         const mid1Div = document.getElementById("mid-1");
@@ -60,14 +60,14 @@ const renderGameById = () => {
         const team1Div = document.getElementById("team-1-box");
             team1Div.innerHTML = `
                         <div class='team-1-header-box'>
-                            <div class='name'>${res.data.response[0].team.name} -Home</div>
+                            <div class='name'>${res.data.response[0].team.name} </div>
                             <div class='logo'><img src="${res.data.response[0].team.logo}"</div> 
                         </div>`
 
         const team2Div = document.getElementById("team-2-box");
             team2Div.innerHTML = `
                         <div class='team-2-header-box'>
-                            <div class='name'>${res.data.response[1].team.name} -Away</div>
+                            <div class='name'>${res.data.response[1].team.name}</div>
                             <div class='logo'><img src="${res.data.response[1].team.logo}"</div> 
                         </div>`
 
@@ -83,23 +83,27 @@ const renderGameById = () => {
                     `
                     if(plr.player.pos === 'G'){
                         const div = document.createElement('div');
-                        div.classList.add('pl1')
-                        div.classList.add('pl-select')
+                        div.classList.add('pl1', 'pl-select')
+                        div.setAttribute('playerId', plr.player.id);
+                        div.addEventListener('click', () => renderPlayerStat(plr.player.id))
                         div.innerText= plr.player.number;
                         gk1Div.append(div);
                     } else if (plr.player.pos === 'D'){
                         const div = document.createElement('div');
-                        div.classList.add('pl1')
+                        div.classList.add('pl1', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         def1Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
-                        div.classList.add('pl1')
+                        div.classList.add('pl1', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         mid1Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
-                        div.classList.add('pl1')
+                        div.classList.add('pl1', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         fwd1Div.append(div);
                     }
@@ -114,22 +118,26 @@ const renderGameById = () => {
                     `
                     if (plr.player.pos === 'G') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2')
+                        div.classList.add('pl2','pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         gk2Div.append(div);
                     } else if (plr.player.pos === 'D') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2')
+                        div.classList.add('pl2', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         def2Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2')
+                        div.classList.add('pl2', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         mid2Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2')
+                        div.classList.add('pl2', 'pl-select')
+                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         fwd2Div.append(div);
                     }
@@ -137,7 +145,7 @@ const renderGameById = () => {
                 }
             })
         })
-        renderGameStat()
+        renderGameStat(fixtureId)
 
         // const plSelector = document.querySelector(".pl-select")
         // plSelector.addEventListener('click', () => renderGameById());

@@ -1,23 +1,77 @@
 .main-box{
     display:flex;
     justify-content: space-between;
-    margin-top:20px;
+    margin-top:15px;
     margin-bottom:20px;
     margin-left:auto;
     margin-right:auto;
-    height:550px;
+    height:560px;
     width:1100px;
     box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.3);
     .left{
-        width:200px;
-        background:$mainLightBlack;
-        color:white;
+        width:250px;
+        background:$mainGrey;
+        color:$mainBlack;
+        padding-top:20px;
+        .league-box{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .country-box{
+                width:100%;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                .name{
+                    margin-right:10px;
+                }
+                .flag img{
+                    width:30px;
+                }
+            }
+            .league-name{
+                margin-top:70px;
+                margin-bottom: 10px;;
+                font-size:20px;
+                font-weight:500;
+            }
+            .logo-box{
+                width:100%;
+                text-align: center;
+                img{
+                    width:90%;
+                }
+            }
+            .season-box{
+                margin-top:10px;
+                // font-weight:300;
+            }
+        }
     }
     .center{
         width:100%;
         // background:$mainGrey;
         .section-name{
-            text-align: center;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 15px 0 30px;
+            padding-bottom: 15px;;
+            border-bottom: 1px solid #ebebeb;
+            .roundPrev{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .roundCurr{
+                font-size:18px;
+            }
+            .roundNext{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
         .fixture-box{
             display:flex;
@@ -26,9 +80,15 @@
             width:100%;
             margin:10px 0;
             transition: all 0.3s;
+            // border-right: white solid 5px;
+            // border-right: white solid 5px;
             &:hover{
                 cursor: pointer;
                 background:$mainGrey;
+                // border-right: white solid 5px;
+                // border-left: white solid 5px;
+                // margin-left:10px;
+                // margin-right:10px; 
             }
             .team1-box{
                 width:300px;
@@ -55,10 +115,15 @@
             .score-box{
                 display:flex;
                 .score{
-                    background:black;
+                    background:$mainLightBlack;
                     color:white;
-                    padding:px;
+                    width:25px;
+                    height:30px;
                     margin:1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;;
                 }
             }
             .team2-box{
@@ -78,8 +143,7 @@
                         width:30px;
                     }
                 }
-            }
-           
+            } 
         }
     }
     .right{

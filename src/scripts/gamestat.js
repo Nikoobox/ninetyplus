@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const renderGameStat = () => {
+const renderGameStat = (fixtureId) => {
     console.log('HI FROM GAME STAT');
     // console.log(d3);
     const oneGameContentDiv = document.getElementById("one-game");
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");
     // testBoxDiv.classList.add("test-box");
-    axios.get(`/gamestat/?fixtureId=${157124}`).then((res) => {
+    axios.get(`/gamestat/?fixtureId=${fixtureId}`).then((res) => {
         console.log(res.data.response);
         const gameStatDiv = document.createElement('div');
         gameStatDiv.classList.add('game-stat-box');

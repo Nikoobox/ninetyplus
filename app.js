@@ -31,7 +31,8 @@ app.get("/standings", (req, res) => {
 });
 
 app.get("/games", (req, res) => {
-    fetch("https://v3.football.api-sports.io/fixtures?league=39&season=2020&round=Regular Season - 12", {
+    console.log(req.query)
+    fetch(`https://v3.football.api-sports.io/fixtures?league=39&season=2020&round=${req.query.round}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v3.football.api-sports.io",
@@ -69,7 +70,7 @@ app.get("/livegames", (req, res) => {
 
 app.get("/game", (req, res) => {
     // fetch("https://v3.football.api-sports.io/fixtures?league=39&season=2020&live=all", {
-    fetch("https://v3.football.api-sports.io/fixtures/lineups?fixture=157125", {
+    fetch(`https://v3.football.api-sports.io/fixtures/lineups?fixture=${req.query.fixtureId}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v3.football.api-sports.io",
