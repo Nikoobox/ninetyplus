@@ -9,12 +9,12 @@
     width:1100px;
     .left{
         width:200px;
-        background:#212322;
+        background:$mainLightBlack;
         color:white;
     }
     .center{
         width:100%;
-        background:rgb(232, 232, 232);
+        background:$mainGrey;
         .section-name{
             text-align: center;
         }
@@ -27,7 +27,7 @@
             transition: all 0.3s;
             &:hover{
                 cursor: pointer;
-                background:rgb(225, 225, 225);
+                background:$mainGrey;
             }
             .team1-box{
                 width:300px;
@@ -48,7 +48,7 @@
                 }
             }
             .vs{
-                color:#747474;
+                color:$mainLightBlack;
                 font-size:14px;
             }
             .score-box{
@@ -82,7 +82,7 @@
         }
     }
     .right{
-        background: #f5b7cd;
+        background: $mainPink;
         .league-standing{
             width:250px;
             display:block;

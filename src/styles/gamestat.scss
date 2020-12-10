@@ -1,6 +1,7 @@
 .game-stat-box{
     
     .stat-box{
+        margin:20px;
         display:flex;
         flex-direction:column;
         align-items: center;
@@ -8,50 +9,62 @@
         .stat-name{
             margin-bottom: 10px;;
         }
+        #possProgress {
+            width: 100%;
+            background-color: $mainDarkGrey;
+            border-radius: 5px;
+            #poss {
+                width: 1%;
+                height: 15px;
+                background-color: $mainLightBlack;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
         #shotsOnProgress {
             width: 100%;
-            background-color: #ddd;
+            background-color: $mainDarkGrey;
             border-radius: 5px;
             #shotsOn {
                 width: 1%;
                 height: 10px;
-                background-color: #4CAF50;
+                background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             }
         }
         #shotsOffProgress {
             width: 100%;
-            background-color: #ddd;
+            background-color: $mainDarkGrey;
             border-radius: 5px;
             #shotsOff {
                 width: 1%;
                 height: 10px;
-                background-color: #4CAF50;
+                background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             }
         }
         #foulsProgress {
             width: 100%;
-            background-color: #ddd;
+            background-color:$mainDarkGrey;
             border-radius: 5px;
             #fouls {
                 width: 1%;
                 height: 10px;
-                background-color: #4CAF50;
+                background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             }
         }
         #ycProgress {
             width: 100%;
-            background-color: #ddd;
+            background-color: $mainDarkGrey;
             border-radius: 5px;
             #yc {
                 width: 1%;
                 height: 10px;
-                background-color: #4CAF50;
+                background-color: $mainLightBlack;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
             }

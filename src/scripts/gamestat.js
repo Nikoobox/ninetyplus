@@ -14,6 +14,7 @@ const renderGameStat = () => {
         gameStatDiv.classList.add('game-stat-box');
         standingsDiv.append(gameStatDiv);
         const teamsStat = res.data.response;
+        const possession = [];
         const shotsOn = [];
         const shotsOff = [];
         const fouls = [];
@@ -21,6 +22,9 @@ const renderGameStat = () => {
 
         teamsStat.forEach((teamStat, idx1) => {
             teamStat.statistics.forEach(stat => {
+                if (stat.type === "Ball Possession") {
+                    possession.push(stat);
+                }
                 if (stat.type === "Shots on Goal"){
                     shotsOn.push(stat);
                 }
@@ -35,11 +39,15 @@ const renderGameStat = () => {
                 }
             })
         })
-
+        console.log(possession)
         gameStatDiv.innerHTML =
             `
             <div>Game Statistics</div>
             <div class='stat-box'>
+                <div id="possProgress">
+                    <div id="poss"></div> 
+                </div>
+                <div class="stat-name"> Ball Possession </div>
                 <div id="shotsOnProgress">
                     <div id="shotsOn"></div> 
                 </div>
@@ -60,16 +68,19 @@ const renderGameStat = () => {
             `;
 
         const renderStats = (stat1, total, idName) => {
-            let ratio = (stat1 / total ) *100;
-            console.log(ratio)
             let elem = document.getElementById(idName);
-            elem.style.width = ratio + "%";
+            if (idName === 'poss'){
+                elem.style.width = stat1;
+            }else{
+                let ratio = (stat1 / total ) *100;
+                elem.style.width = ratio + "%";
+            }
         }
-
-        renderStats(shotsOn[0].value, shotsOn[0].value + shotsOn[1].value, "shotsOn")
-        renderStats(shotsOff[0].value, shotsOff[0].value + shotsOff[1].value, "shotsOff")
-        renderStats(fouls[0].value, fouls[0].value + fouls[1].value, "fouls")
-        renderStats(yc[0].value, yc[0].value + yc[1].value, "yc")
+        renderStats(possession[0].value, 0, "poss");
+        renderStats(shotsOn[0].value, shotsOn[0].value + shotsOn[1].value, "shotsOn");
+        renderStats(shotsOff[0].value, shotsOff[0].value + shotsOff[1].value, "shotsOff");
+        renderStats(fouls[0].value, fouls[0].value + fouls[1].value, "fouls");
+        renderStats(yc[0].value, yc[0].value + yc[1].value, "yc");
       
     }).catch(err => {
         console.log(err)

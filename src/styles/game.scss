@@ -74,7 +74,7 @@
                 top:385px;
             }
             .pl1{
-                background: black;
+                background: $mainBlack;
                 color:white;
                 border-radius:50%;
                 width:30px;
@@ -85,8 +85,8 @@
                 justify-content: center;
             }
             .pl2{
-                background: #f5b7cd;
-                color:black;
+                background: $mainPink;
+                color:$mainBlack;
                 border-radius:50%;
                 width:30px;
                 height:30px;
