@@ -8,7 +8,6 @@ const renderGames = (round) => {
     allGamesDiv.innerHTML = "<div></div>";
     const leagueInfoDiv = document.getElementById("league-info");
     leagueInfoDiv.classList.add('left');
-    // leagueInfoDiv.innerHTML = "<div></div>";
 
     axios.get(`./games?round=${round}`).then((res) => {
         console.log(res.data.response);
@@ -90,30 +89,32 @@ const renderGames = (round) => {
             const fixtureRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
             fixtureRowDiv.setAttribute('gameId', gameId );
-            fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
-
+            
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');
             // console.log((gameLiveStatus.includes(gameStatus) || gameStatus === 'FT'))
             // if game is live then show 'score', otherwise show 'vs'
             const temp = (gameLiveStatus.includes(gameStatus) || (gameStatus === 'FT')) ? `
             <div class="score-box">
-                <div class='score'>${score1}</div>
-                <div class='score'>${score2}</div>
+            <div class='score'>${score1}</div>
+            <div class='score'>${score2}</div>
             </div>
             `: '<div class="vs">vs</div>';
             
             fixtureRowDiv.innerHTML = gameNotLiveStatus.includes(gameStatus) ? `
             <div class='team1-box' >
-                <div class="name">${team1}</div>
-                <div class="logo"><img src="${logo1}"/></div>
+            <div class="name">${team1}</div>
+            <div class="logo"><img src="${logo1}"/></div>
             </div>
             ${temp}
             <div class='team2-box'>
-                <div class="logo"><img src="${logo2}"/></div>
-                <div class="name">${team2}</div>
+            <div class="logo"><img src="${logo2}"/></div>
+            <div class="name">${team2}</div>
             </div>`: "";
-
+            if (gameStatus !== 'NS') {
+                fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
+            }
+            
             allGamesBoxDiv.appendChild(fixtureRowDiv);
         });
     }).catch(err => {
