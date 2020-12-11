@@ -21,20 +21,25 @@ const renderGames = (round) => {
 
         leagueInfoDiv.innerHTML = `
         <div class='league-box'>
+          
             <div class='country-box'>
                 <div class='name'>${res.data.response[0].league.country}</div>
                 <div class='flag'>
                     <img src="${res.data.response[0].league.flag}"/>
                 </div>
             </div>
-             <div class='league-name'>
+            <div class='league-name'>
                 ${res.data.response[0].league.name}
             </div>
             <div class='logo-box'>
                 <img src="${res.data.response[0].league.logo}"/>
             </div>
-             <div class='season-box'>
+            <div class='season-box'>
                 Season ${res.data.response[0].league.season}-${nextSeason}
+            </div>
+          
+            <div class='epl-link'>
+                <a href='https://www.premierleague.com/'>Visit EPL</a>   
             </div>
         </div>
         `;

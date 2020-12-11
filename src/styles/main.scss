@@ -8,14 +8,14 @@
     margin-top:15px;
     margin-bottom:20px;
 
-    height:560px;
-    width:1100px;
+    height:610px;
+    width:1250px;
     box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.3);
     @media (min-width: 1400px) {
         margin-top:100px;
     }
     .left{
-        width:250px;
+        width:260px;
         background:$mainGrey;
         color:$mainBlack;
         padding-top:20px;
@@ -37,7 +37,7 @@
                 }
             }
             .league-name{
-                margin-top:70px;
+                margin-top:100px;
                 margin-bottom: 10px;;
                 font-size:20px;
                 font-weight:500;
@@ -51,6 +51,20 @@
             }
             .season-box{
                 margin-top:10px;
+            }
+            .epl-link{
+                margin-top:210px;
+                letter-spacing: 0.5px;
+                a{
+                    color: $mainBlack;
+                    text-decoration:none;
+                    transition: 0.2s all;
+                    border-bottom: $mainGrey solid 4px;
+                    &:hover{
+                        cursor:pointer;
+                        border-bottom: $mainPink solid 4px;
+                    }
+                }
             }
         }
     }
@@ -82,7 +96,7 @@
             align-items: center;
             justify-content: center;
             width:100%;
-            margin:10px 0;
+            margin:15px 0;
             transition: all 0.3s;
             &:hover{
                 cursor: pointer;
@@ -147,12 +161,12 @@
     .right{
         background: $mainPink;
         .league-standing{
-            width:250px;
+            width:300px;
             display:block;
             .name{
                 margin:auto;
                 margin-top:15px;
-                margin-bottom:10px;
+                margin-bottom:15px;
                 font-size:18px;
                 text-align: center;
                 border-bottom:4px $mainBlack solid;
@@ -164,23 +178,24 @@
                 color:$mainDarkGrey;
                 font-weight:300;
                 font-size: 14px;
+                margin-bottom: 5px;
                 .pos{
-                    margin-left:30px;
+                    margin-left:35px;
                 }
                 .team-name{
                     margin-left:10px;
                 }
                 .points{
-                    margin-left:138px;
+                    margin-left:175px;
                 }
             }
             .team-standing-box{
                 font-size:15px;
-                margin: 2px 15px 10px;
+                margin: 2px 20px 10px;
                 .team-standing-row{
                     border-bottom: 1px solid $mainDarkPink;
                     margin: 2px;
-                    margin-bottom:4px;
+                    margin-bottom:6px;
                     display:flex;
                     justify-content: space-between;
                     .team-rank-box{

@@ -1,5 +1,5 @@
 .game-stat-box{
-    width:240px;
+    width:260px;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -10,7 +10,7 @@
     }
     .stat-box{
         width:100%;
-        padding:10px 5px;
+        padding:20px 5px;
         display:flex;
         flex-direction:column;
         align-items: center;
@@ -21,7 +21,7 @@
             align-items:center;
             justify-content: space-between;
             margin-top:5px;
-            margin-bottom:50px;
+            margin-bottom:60px;
             padding:2px;
             .teamHome{
                 display:flex;
@@ -35,8 +35,8 @@
                     }
                 }
                 .teamName{
-                    font-size:16px;
-                    margin-bottom: 5px;;
+                    font-size:18px;
+                    margin-bottom: 10px;;
                 }
                 .teamScore1{
                     font-size:22px;
