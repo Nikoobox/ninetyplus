@@ -146,11 +146,10 @@ const renderGameById = (fixtureId, score1, score2) => {
         })
         renderGameStat(fixtureId, score1, score2);
 
-        const modalDiv = document.createElement('div');
         //modal functionality
+        const modalDiv = document.createElement('div');
         modalDiv.innerHTML =
             `
-            <button id="myBtn">Open Modal</button>
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -175,17 +174,6 @@ const renderGameById = (fixtureId, score1, score2) => {
 
         })
         
-        
-        
-        const clickedPlayer = () => {
-            console.log('FINALLY!!!!')
-            modal.style.display = "block";
-        }
-
-        // btn.onclick = function () {
-        //     modal.style.display = "block";
-        // }
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
