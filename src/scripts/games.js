@@ -79,6 +79,7 @@ const renderGames = (round) => {
             const score1 = fix.goals.home;
             const score2 = fix.goals.away;
             const gameStatus = fix.fixture.status.short;
+            // console.log(`${gameStatus} ${team1} ${team2} ${}`)
             const gameId = fix.fixture.id;
          
             const fixtureRowDiv = document.createElement('div');
@@ -88,9 +89,9 @@ const renderGames = (round) => {
 
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');
-
+            // console.log((gameLiveStatus.includes(gameStatus) || gameStatus === 'FT'))
             // if game is live then show 'score', otherwise show 'vs'
-            const temp = (gameLiveStatus.includes(gameStatus) || gameStatus === 'FT')? `
+            const temp = (gameLiveStatus.includes(gameStatus) || (gameStatus === 'FT')) ? `
             <div class="score-box">
                 <div class='score'>${score1}</div>
                 <div class='score'>${score2}</div>
