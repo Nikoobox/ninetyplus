@@ -6,6 +6,9 @@ const renderGames = (round) => {
     const allGamesDiv = document.getElementById("all-games")
     const allGamesBoxDiv = document.createElement("div");
     allGamesDiv.innerHTML = "<div></div>";
+    const leagueInfoDiv = document.getElementById("league-info");
+    leagueInfoDiv.classList.add('left');
+    // leagueInfoDiv.innerHTML = "<div></div>";
 
     axios.get(`./games?round=${round}`).then((res) => {
         console.log(res.data.response);
@@ -13,7 +16,6 @@ const renderGames = (round) => {
         const sectionNameDiv = document.createElement("div");
         sectionNameDiv.classList.add("section-name");
         
-        const leagueInfoDiv = document.getElementById("league-info");
 
         const nextSeason = res.data.response[0].league.season + 1;
 

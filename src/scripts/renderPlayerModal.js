@@ -34,11 +34,11 @@ const renderPlayerModal = (squadsDiv, FixturePlayersStat, fixtureId) => {
 
     })
 
-    span.onclick = function () {
+    span.onclick = () => {
         modal.style.display = "none";
     }
 
-    window.onclick = function (event) {
+    window.onclick = (event) => {
         if (event.target == modal) {
             modal.style.display = "none";
         }

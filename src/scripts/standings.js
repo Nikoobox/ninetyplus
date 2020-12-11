@@ -7,8 +7,7 @@ const renderStandings= () => {
     standingsDiv.append(standingBoxDiv);
     
     axios.get('./standings').then((res) => {
-        // const leagueName = res.data.response[0].league.name;
-        // console.log(res.data.response[0].league.standings);
+        
         const teamsArr = res.data.response[0].league.standings[0];
         teamsArr.forEach((team, idx) => {
             

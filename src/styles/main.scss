@@ -45,13 +45,11 @@
             }
             .season-box{
                 margin-top:10px;
-                // font-weight:300;
             }
         }
     }
     .center{
         width:100%;
-        // background:$mainGrey;
         .section-name{
             display:flex;
             align-items: center;
@@ -146,11 +144,39 @@
             width:250px;
             display:block;
             .name{
+                margin:auto;
+                margin-top:15px;
+                margin-bottom:10px;
+                font-size:18px;
                 text-align: center;
+                border-bottom:4px $mainBlack solid;
+                width:50%;
+            }
+            .header{
+                display:flex;
+                align-items: center;
+                color:$mainDarkGrey;
+                font-weight:300;
+                font-size: 14px;
+                .pos{
+                    margin-left:30px;
+                }
+                .team-name{
+                    margin-left:10px;
+                }
+                .points{
+                    margin-left:138px;
+                }
             }
             .team-standing-box{
-                margin: 10px 15px;
+                font-size:15px;
+                margin: 2px 15px 10px;
                 .team-standing-row{
+                    border-bottom: 1px solid $mainDarkPink;
+                    margin: 2px;
+                    margin-bottom:4px;
+                    display:flex;
+                    justify-content: space-between;
                     .team-rank-box{
                         .team-rank{
                             width:20px;
@@ -159,13 +185,8 @@
                         }
                         display:flex;
                     }
-                    margin: 2px;
-                    display:flex;
-                    justify-content: space-between;
                 }
-    
             }
-
         }
     }
 }

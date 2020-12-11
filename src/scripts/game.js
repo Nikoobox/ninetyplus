@@ -89,7 +89,7 @@ const renderGameById = (fixtureId, score1, score2) => {
                     `
                     if(plr.player.pos === 'G'){
                         const div = document.createElement('div');
-                        div.classList.add('pl1', 'pl-select')
+                        div.classList.add('pl1', 'pl-select');
                         div.setAttribute('playerId', plr.player.id);
                         div.setAttribute('teamId', command.team.id);
                         // div.setAttribute('fixtureId', fixtureId);
@@ -97,17 +97,23 @@ const renderGameById = (fixtureId, score1, score2) => {
                         gk1Div.append(div);
                     } else if (plr.player.pos === 'D'){
                         const div = document.createElement('div');
-                        div.classList.add('pl1', 'pl-select')
+                        div.classList.add('pl1', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         def1Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
-                        div.classList.add('pl1', 'pl-select')
+                        div.classList.add('pl1', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         mid1Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
-                        div.classList.add('pl1', 'pl-select')
+                        div.classList.add('pl1', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         fwd1Div.append(div);
                     }
@@ -122,22 +128,30 @@ const renderGameById = (fixtureId, score1, score2) => {
                     `
                     if (plr.player.pos === 'G') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2','pl-select')
+                        div.classList.add('pl2','pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         gk2Div.append(div);
                     } else if (plr.player.pos === 'D') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2', 'pl-select')
+                        div.classList.add('pl2', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         def2Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2', 'pl-select')
+                        div.classList.add('pl2', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         mid2Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
-                        div.classList.add('pl2', 'pl-select')
+                        div.classList.add('pl2', 'pl-select');
+                        div.setAttribute('playerId', plr.player.id);
+                        div.setAttribute('teamId', command.team.id);
                         div.innerText = plr.player.number;
                         fwd2Div.append(div);
                     }
@@ -149,11 +163,10 @@ const renderGameById = (fixtureId, score1, score2) => {
         renderGameStat(fixtureId, score1, score2);
         
         getFixturePlayersStat(fixtureId).then((FixturePlayersStat) => {
-            // console.log(FixturePlayersStat);
+            //modal functionality
             renderPlayerModal(squadsDiv, FixturePlayersStat, fixtureId);
         });
         
-        //modal functionality
 
     }).catch(err => {
         console.log(err)
