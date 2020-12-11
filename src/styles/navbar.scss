@@ -11,12 +11,22 @@
         font-size:24px;
         font-weight:600;
         letter-spacing:0.5px;
+        
+        &:hover{
+            cursor: pointer;
+        }
     }
     .links{
         display:flex;
         div{
+            color:#8e8e8e;
             margin-left:20px;
             font-weight: 300;
+            transition: all 0.2s ease;
+            &:hover{
+                cursor: pointer;
+                color:white;
+            }
         }
     }
     

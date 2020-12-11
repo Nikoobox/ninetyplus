@@ -3,9 +3,9 @@ import field from '../../assets/field.png';
 import renderGameStat from './gamestat';
 import renderPlayerStat from './renderPlayerStat';
 
-const renderGameById = (fixtureId) => {
+const renderGameById = (fixtureId, score1, score2) => {
     console.log('Hi from game!');
-    console.log(fixtureId)
+
     const leagueInfoDiv = document.getElementById("league-info");
     leagueInfoDiv.innerHTML = "<div></div>";
     leagueInfoDiv.classList.remove('left');
@@ -29,7 +29,8 @@ const renderGameById = (fixtureId) => {
             <div id='team-2-box'></div>
             `;
         oneGameContentDiv.append(squadsDiv);
-
+        
+       
         fieldDiv.innerHTML =
             `
         <div class="field-img">
@@ -56,21 +57,26 @@ const renderGameById = (fixtureId) => {
         const mid2Div = document.getElementById("mid-2");
         const fwd2Div = document.getElementById("fwd-2");
 
-        //adding players inside squads section - left of field
+        //adding players inside squads section
         const team1Div = document.getElementById("team-1-box");
             team1Div.innerHTML = `
                         <div class='team-1-header-box'>
                             <div class='name'>${res.data.response[0].team.name} </div>
-                            <div class='logo'><img src="${res.data.response[0].team.logo}"</div> 
+                            <div class='logo'>
+                            <img src="${res.data.response[0].team.logo}"/>
+                            </div> 
                         </div>`
 
         const team2Div = document.getElementById("team-2-box");
             team2Div.innerHTML = `
                         <div class='team-2-header-box'>
                             <div class='name'>${res.data.response[1].team.name}</div>
-                            <div class='logo'><img src="${res.data.response[1].team.logo}"</div> 
+                            <div class='logo'>
+                                <img src="${res.data.response[1].team.logo}"/>
+                            </div> 
                         </div>`
 
+        //place players on a field according to their actual position and team formation
         res.data.response.forEach((command, cidx) => {
             command.startXI.forEach((plr, pidx) => {
                 if (cidx === 0) {
@@ -91,19 +97,16 @@ const renderGameById = (fixtureId) => {
                     } else if (plr.player.pos === 'D'){
                         const div = document.createElement('div');
                         div.classList.add('pl1', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         def1Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
                         div.classList.add('pl1', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         mid1Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
                         div.classList.add('pl1', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         fwd1Div.append(div);
                     }
@@ -119,25 +122,21 @@ const renderGameById = (fixtureId) => {
                     if (plr.player.pos === 'G') {
                         const div = document.createElement('div');
                         div.classList.add('pl2','pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         gk2Div.append(div);
                     } else if (plr.player.pos === 'D') {
                         const div = document.createElement('div');
                         div.classList.add('pl2', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         def2Div.append(div);
                     } else if (plr.player.pos === 'M') {
                         const div = document.createElement('div');
                         div.classList.add('pl2', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         mid2Div.append(div);
                     } else if (plr.player.pos === 'F') {
                         const div = document.createElement('div');
                         div.classList.add('pl2', 'pl-select')
-                        // div.classList.add('pl-select')
                         div.innerText = plr.player.number;
                         fwd2Div.append(div);
                     }
@@ -145,10 +144,57 @@ const renderGameById = (fixtureId) => {
                 }
             })
         })
-        renderGameStat(fixtureId)
+        renderGameStat(fixtureId, score1, score2);
 
-        // const plSelector = document.querySelector(".pl-select")
-        // plSelector.addEventListener('click', () => renderGameById());
+        const modalDiv = document.createElement('div');
+        //modal functionality
+        modalDiv.innerHTML =
+            `
+            <button id="myBtn">Open Modal</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+            </div>`
+        squadsDiv.appendChild(modalDiv);
+        // Get the modal
+        const modal = document.querySelector("#myModal");
+        // Get the button that opens the modal
+        const playersToClick = document.querySelectorAll(".pl-select");
+
+        console.log(playersToClick);
+        console.log(modal);
+        // Get the <span> element that closes the modal
+        const span = document.getElementsByClassName("close")[0];
+
+        playersToClick.forEach((player)=>{
+            player.addEventListener('click', () => {
+                modal.style.display = "block";
+            });
+
+        })
+        
+        
+        
+        const clickedPlayer = () => {
+            console.log('FINALLY!!!!')
+            modal.style.display = "block";
+        }
+
+        // btn.onclick = function () {
+        //     modal.style.display = "block";
+        // }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
 
     }).catch(err => {
         console.log(err)

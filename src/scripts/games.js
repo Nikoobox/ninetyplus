@@ -82,7 +82,7 @@ const renderGames = (round) => {
             const fixtureRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
             fixtureRowDiv.setAttribute('gameId', gameId );
-            fixtureRowDiv.addEventListener('click', () => renderGameById(gameId));
+            fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
 
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');

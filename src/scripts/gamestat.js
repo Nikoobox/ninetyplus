@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const renderGameStat = (fixtureId) => {
+const renderGameStat = (fixtureId, score1, score2) => {
     console.log('HI FROM GAME STAT');
-    // console.log(d3);
     const oneGameContentDiv = document.getElementById("one-game");
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");
@@ -39,11 +38,27 @@ const renderGameStat = (fixtureId) => {
                 }
             })
         })
-        console.log(possession)
+        // console.log(possession)
         gameStatDiv.innerHTML =
             `
-            <div name='game-stat-title'>Game Statistics</div>
+            <div class='game-stat-title'>Game Statistics</div>
             <div class='stat-box'>
+                <div class='scoreBox'>
+                    <div class="teamHome">
+                        <div class="teamLogo">
+                        <img src="${res.data.response[0].team.logo}"/>
+                        </div> 
+                        <div class="teamName">${res.data.response[0].team.name}</div>
+                        <div class='teamScore1'>${score1}</div>
+                    </div>
+                    <div class="teamHome">
+                        <div class="teamLogo">
+                        <img src="${res.data.response[1].team.logo}"/>
+                        </div> 
+                        <div class="teamName">${res.data.response[1].team.name}</div>
+                        <div class='teamScore2'>${score2}</div>
+                    </div>  
+                </div>
                 <div id="possProgress">
                     <div id="poss"></div> 
                 </div>

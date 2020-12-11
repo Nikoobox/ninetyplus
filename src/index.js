@@ -19,12 +19,15 @@ import renderStandings from "./scripts/standings";
 // renderGames('Regular Season - 11');
 // request to for all upcoming weekend fixtures
 
+
 window.addEventListener("DOMContentLoaded", () => {
     let round = 'Regular Season - 11' ;
-    // console.log(round)
     renderGames(round);
     // renderGameStat();
-    renderStandings();
+    // renderStandings();
+
+    const navbarLogo = document.querySelector("#navbar-logo");
+    navbarLogo.addEventListener('click', () => renderGames(round));
 });
 
 // import renderGameById from './scripts/game';
