@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const renderGameStat = (fixtureId, score1, score2) => {
-    console.log('HI FROM GAME STAT');
+    // console.log('HI FROM GAME STAT');
     const oneGameContentDiv = document.getElementById("one-game");
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");

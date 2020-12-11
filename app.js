@@ -106,6 +106,24 @@ app.get("/gamestat", (req, res) => {
     });
 });
 
+app.get("/fixture_players_stat", (req, res) => {
+    console.log(req.query)
+    fetch(`https://v3.football.api-sports.io/fixtures/players?fixture=${req.query.fixtureId}`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": `${process.env.API_KEY}`
+        }
+    }).then(response => {
+        return response.text();
+    }).then(body => {
+        let results = JSON.parse(body);
+        console.log(results); // logs to server
+        res.send(results); // sends to frontend
+    }).catch(err => {
+        console.log(err);
+    });
+});
 
 app.listen(PORT, () => {
     console.log(__dirname);

@@ -1,7 +1,8 @@
 import axios from "axios";
 import field from '../../assets/field.png';
 import renderGameStat from './gamestat';
-import renderPlayerStat from './renderPlayerStat';
+import getFixturePlayersStat from "./getFixturePlayersStat";
+import renderPlayerModal from './renderPlayerModal';
 
 const renderGameById = (fixtureId, score1, score2) => {
     console.log('Hi from game!');
@@ -30,7 +31,6 @@ const renderGameById = (fixtureId, score1, score2) => {
             `;
         oneGameContentDiv.append(squadsDiv);
         
-       
         fieldDiv.innerHTML =
             `
         <div class="field-img">
@@ -91,7 +91,8 @@ const renderGameById = (fixtureId, score1, score2) => {
                         const div = document.createElement('div');
                         div.classList.add('pl1', 'pl-select')
                         div.setAttribute('playerId', plr.player.id);
-                        div.addEventListener('click', () => renderPlayerStat(plr.player.id))
+                        div.setAttribute('teamId', command.team.id);
+                        // div.setAttribute('fixtureId', fixtureId);
                         div.innerText= plr.player.number;
                         gk1Div.append(div);
                     } else if (plr.player.pos === 'D'){
@@ -140,49 +141,19 @@ const renderGameById = (fixtureId, score1, score2) => {
                         div.innerText = plr.player.number;
                         fwd2Div.append(div);
                     }
-                    team2Div.appendChild(playerDiv)
+                    team2Div.appendChild(playerDiv, fixtureId)
                 }
             })
         })
+
         renderGameStat(fixtureId, score1, score2);
-
-        //modal functionality
-        const modalDiv = document.createElement('div');
-        modalDiv.innerHTML =
-            `
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
-                </div>
-            </div>`
-        squadsDiv.appendChild(modalDiv);
-        // Get the modal
-        const modal = document.querySelector("#myModal");
-        // Get the button that opens the modal
-        const playersToClick = document.querySelectorAll(".pl-select");
-
-        console.log(playersToClick);
-        console.log(modal);
-        // Get the <span> element that closes the modal
-        const span = document.getElementsByClassName("close")[0];
-
-        playersToClick.forEach((player)=>{
-            player.addEventListener('click', () => {
-                modal.style.display = "block";
-            });
-
-        })
         
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+        getFixturePlayersStat(fixtureId).then((FixturePlayersStat) => {
+            // console.log(FixturePlayersStat);
+            renderPlayerModal(squadsDiv, FixturePlayersStat, fixtureId);
+        });
+        
+        //modal functionality
 
     }).catch(err => {
         console.log(err)
