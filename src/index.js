@@ -17,7 +17,7 @@ import renderPlayerStat from "./scripts/standings";
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    let round = 'Regular Season - 11' ;
+    let round = 'Regular Season - 12' ;
     renderGames(round);
     // renderGameStat();
     renderStandings();

@@ -92,7 +92,6 @@ const renderGameById = (fixtureId, score1, score2) => {
                         div.classList.add('pl1', 'pl-select');
                         div.setAttribute('playerId', plr.player.id);
                         div.setAttribute('teamId', command.team.id);
-                        // div.setAttribute('fixtureId', fixtureId);
                         div.innerText= plr.player.number;
                         gk1Div.append(div);
                     } else if (plr.player.pos === 'D'){

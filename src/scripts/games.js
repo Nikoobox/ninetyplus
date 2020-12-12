@@ -1,5 +1,6 @@
 import axios from "axios";
 import renderGameById from './game';
+import gamesRefresh from './gamesRefresh';
 
 const renderGames = (round) => {
     console.log(round)
@@ -15,6 +16,7 @@ const renderGames = (round) => {
         const sectionNameDiv = document.createElement("div");
         sectionNameDiv.classList.add("section-name");
         
+        let liveGamesStatus = false;
 
         const nextSeason = res.data.response[0].league.season + 1;
 
@@ -59,14 +61,13 @@ const renderGames = (round) => {
                 Round ${nextRound}   >>
             </div>
             `
-        
         allGamesDiv.append(sectionNameDiv);
 
         const pRound = `Regular Season - ${prevRound}`;
         const nRound = `Regular Season - ${nextRound}`;
         const previousRound = document.querySelector(".roundPrev");
         const followingRound = document.querySelector(".roundNext");
-        // previousRound.setAttribute('roundName', pRound);
+        
         previousRound.addEventListener('click', () => renderGames(pRound));
         followingRound.addEventListener('click', () => renderGames(nRound));    
        
@@ -83,16 +84,18 @@ const renderGames = (round) => {
             const score1 = fix.goals.home;
             const score2 = fix.goals.away;
             const gameStatus = fix.fixture.status.short;
-            // console.log(`${gameStatus} ${team1} ${team2} ${}`)
             const gameId = fix.fixture.id;
-         
+            // console.log(`gameStatus is: ${gameStatus}`)
+            // to check if at leat one game is live to enable updates
+            if (gameLiveStatus.includes(gameStatus)) liveGamesStatus = true;
+            // console.log(liveGamesStatus)
             const fixtureRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
             fixtureRowDiv.setAttribute('gameId', gameId );
             
             const scoreBoxDiv = document.createElement('div');
             scoreBoxDiv.classList.add('score-box');
-            // console.log((gameLiveStatus.includes(gameStatus) || gameStatus === 'FT'))
+
             // if game is live then show 'score', otherwise show 'vs'
             const temp = (gameLiveStatus.includes(gameStatus) || (gameStatus === 'FT')) ? `
             <div class="score-box">
@@ -111,12 +114,36 @@ const renderGames = (round) => {
             <div class="logo"><img src="${logo2}"/></div>
             <div class="name">${team2}</div>
             </div>`: "";
+            
             if (gameStatus !== 'NS') {
                 fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
             }
             
             allGamesBoxDiv.appendChild(fixtureRowDiv);
         });
+        // console.log(liveGamesStatus);
+        const buttonLiveUpdates = document.createElement("div");
+        buttonLiveUpdates.classList.add('live-updates-box');
+        allGamesBoxDiv.appendChild(buttonLiveUpdates);
+
+        let count = 0
+        if (!liveGamesStatus){
+            
+            buttonLiveUpdates.innerHTML = `
+            <button id='live-updates'>Activate Live Updates</button>
+            <button id='no-live-updates'>Stop Live Updates</button>
+            `;
+            const btnLiveUpdates = document.getElementById("live-updates");
+            const btnNoLiveUpdates = document.getElementById("no-live-updates");
+
+            gamesRefresh(btnLiveUpdates, btnNoLiveUpdates, round)
+
+        }else{
+            buttonLiveUpdates.innerHTML = `<button class='no-live-updates' inactive >Live updates are not available</button>`;
+            allGamesBoxDiv.appendChild(buttonLiveUpdates);
+        }
+
+
     }).catch(err => {
         console.log(err)
     });

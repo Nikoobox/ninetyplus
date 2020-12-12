@@ -8,7 +8,7 @@
     padding: 30px 30px 10px;
     letter-spacing:0.8px;
     .logo-box{
-        font-size:24px;
+        font-size:32px;
         font-weight:600;
         letter-spacing:0.6px;
         
@@ -18,15 +18,16 @@
     }
     .links{
         display:flex;
+        font-size:18px;
         a{
             text-decoration: none;
-            color:#8e8e8e;
-            margin-left:20px;
+            color:#ffffff;
+            margin-left:30px;
             font-weight: 300;
             transition: all 0.1s ease;
             &:hover{
                 cursor: pointer;
-                color:white;
+                color:$mainPink;
             }
         }
     }
