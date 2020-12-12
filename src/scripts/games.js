@@ -22,7 +22,6 @@ const renderGames = (round) => {
 
         leagueInfoDiv.innerHTML = `
         <div class='league-box'>
-          
             <div class='country-box'>
                 <div class='name'>${res.data.response[0].league.country}</div>
                 <div class='flag'>
@@ -89,9 +88,12 @@ const renderGames = (round) => {
 
             // to check if at leat one game is live to enable updates
             if (gameLiveStatus.includes(gameStatus)) liveGamesStatus = true;
-            // console.log(liveGamesStatus)
+          
             const fixtureRowDiv = document.createElement('div');
+            const gameStatusRowDiv = document.createElement('div');
             fixtureRowDiv.classList.add('fixture-box');
+            gameStatusRowDiv.classList.add('game-status-row');
+
             fixtureRowDiv.setAttribute('gameId', gameId );
             
             const scoreBoxDiv = document.createElement('div');
@@ -99,28 +101,32 @@ const renderGames = (round) => {
 
             // if game is live then show 'score', otherwise show 'vs'
             const temp = (gameLiveStatus.includes(gameStatus) || (gameStatus === 'FT')) ? `
-            <div class="score-box">
-            <div class='score'>${score1}</div>
-            <div class='score'>${score2}</div>
+            <div class='score-box'>
+                <div class='score'>${score1}</div>
+                <div class='score'>${score2}</div>
             </div>
             `: '<div class="vs">vs</div>';
             
             fixtureRowDiv.innerHTML =  `
+            <div class='game-status-section'>${fix.fixture.status.long}</div>
             <div class='team1-box' >
-            <div class="name">${team1}</div>
-            <div class="logo"><img src="${logo1}"/></div>
+                <div class="name">${team1}</div>
+                <div class="logo"><img src="${logo1}"/></div>
             </div>
             ${temp}
             <div class='team2-box'>
-            <div class="logo"><img src="${logo2}"/></div>
-            <div class="name">${team2}</div>
+                <div class="logo"><img src="${logo2}"/></div>
+                <div class="name">${team2}</div>
             </div>`;
             
             if (gameStatus !== 'NS') {
                 fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
             }
+
+            // gameStatusRowDiv.innerText = fix.fixture.status.long;
             
             allGamesBoxDiv.appendChild(fixtureRowDiv);
+            // allGamesBoxDiv.appendChild(gameStatusRowDiv);
         });
         // console.log(liveGamesStatus);
         const buttonLiveUpdates = document.createElement("div");
@@ -128,7 +134,19 @@ const renderGames = (round) => {
         allGamesBoxDiv.appendChild(buttonLiveUpdates);
 
         console.log('from games:');
-        console.log(localStorage.getItem('localStInterval'))
+        console.log(localStorage.getItem('localStInterval'));
+
+        if (localStorage.getItem('localStCounter') !== null){
+            let newCounter = localStorage.getItem('localStCounter');
+            newCounter ++;
+            localStorage.setItem('localStCounter', newCounter);
+            console.log(`newCounter is --> ${newCounter}`)
+            if (newCounter === 3){
+                clearInterval(localStorage.getItem('localStInterval'));
+                localStorage.clear();
+                console.log('Local Storage was cleared')
+            }
+        }
 
         if (liveGamesStatus){
     

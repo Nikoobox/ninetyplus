@@ -53,7 +53,7 @@
                 margin-top:10px;
             }
             .epl-link{
-                margin-top:200px;
+                margin-top:190px;
                 letter-spacing: 0.5px;
                 a{
                     color: $mainBlack;
@@ -92,11 +92,12 @@
             }
         }
         .fixture-box{
+            position:relative;
             display:flex;
             align-items: center;
             justify-content: center;
             width:100%;
-            margin:12px 0;
+            margin:12px 0 10px;
             transition: all 0.3s;
             &:hover{
                 cursor: pointer;
@@ -121,8 +122,9 @@
                 }
             }
             .vs{
-                color:$mainLightBlack;
-                font-size:14px;
+                color:$mainDarkGrey;
+                font-size:20px;
+                // font-weight:300;
             }
             .score-box{
                 display:flex;
@@ -157,33 +159,45 @@
                 }
             } 
         }
+        .game-status-section{
+            color: $mainDarkGrey;
+            position:absolute;
+            // text-align: center;
+            font-size:14px;
+            font-weight:300;
+            left:20px;
+            letter-spacing: 0.3px;;
+        }
         .live-updates-box{
             display:flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
             // margin:10px 0;
             padding:10px 0;
             button{
                 font-size:18px;
-                padding:3px 5px;
+                padding:5px 8px;
                 // margin:5px 50px;
+            
             }
             #live-updates{
                 background:white;
                 border: 2px $mainBlack solid;
                 border-radius:5px;
                 transition: all ease 0.2s;
+                margin-left:20px;
                 &:hover{
                     cursor: pointer;
                     background: $mainPink;
                 }
-               
+                
             }
             #no-live-updates{
                 background:white;
                 border: 2px $mainBlack solid;
                 border-radius:5px;
                 transition: all ease 0.2s;
+                margin-right:20px;
                 &:hover{
                     cursor: pointer;
                     background: $mainPink;
@@ -192,8 +206,16 @@
             }
             .no-live-updates{
                 background:white;
+                display:flex;
+                align-items: center;
+                justify-content: center;
                 // border: 2px $mainBlack solid;
                 
+            }
+            button[disabled] { 
+                pointer-events: none;
+                // border:rgba(189, 167, 167, 0.3) solid 2px;
+
             }
         }
     }

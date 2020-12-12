@@ -8,7 +8,9 @@ const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
         renderGames(round)
         interval = setInterval(() => renderGames(round), 10000);
         localStorage.setItem('localStInterval', interval);
-        
+        let counter = 0
+        localStorage.setItem('localStCounter', counter);
+
         console.log(`interval is ${interval}`)
         console.log(`Local storage interval value is ${localStorage.getItem('localStInterval')}`)
     });
