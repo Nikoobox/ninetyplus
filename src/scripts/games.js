@@ -85,7 +85,8 @@ const renderGames = (round) => {
             const score2 = fix.goals.away;
             const gameStatus = fix.fixture.status.short;
             const gameId = fix.fixture.id;
-            // console.log(`gameStatus is: ${gameStatus}`)
+            // console.log(`gameStatus is: ${gameStatus} ${team1} vs ${team2}`)
+
             // to check if at leat one game is live to enable updates
             if (gameLiveStatus.includes(gameStatus)) liveGamesStatus = true;
             // console.log(liveGamesStatus)
@@ -104,7 +105,7 @@ const renderGames = (round) => {
             </div>
             `: '<div class="vs">vs</div>';
             
-            fixtureRowDiv.innerHTML = gameNotLiveStatus.includes(gameStatus) ? `
+            fixtureRowDiv.innerHTML =  `
             <div class='team1-box' >
             <div class="name">${team1}</div>
             <div class="logo"><img src="${logo1}"/></div>
@@ -113,7 +114,7 @@ const renderGames = (round) => {
             <div class='team2-box'>
             <div class="logo"><img src="${logo2}"/></div>
             <div class="name">${team2}</div>
-            </div>`: "";
+            </div>`;
             
             if (gameStatus !== 'NS') {
                 fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
@@ -126,9 +127,11 @@ const renderGames = (round) => {
         buttonLiveUpdates.classList.add('live-updates-box');
         allGamesBoxDiv.appendChild(buttonLiveUpdates);
 
-        let count = 0
-        if (!liveGamesStatus){
-            
+        console.log('from games:');
+        console.log(localStorage.getItem('localStInterval'))
+
+        if (liveGamesStatus){
+    
             buttonLiveUpdates.innerHTML = `
             <button id='live-updates'>Activate Live Updates</button>
             <button id='no-live-updates'>Stop Live Updates</button>
@@ -137,13 +140,18 @@ const renderGames = (round) => {
             const btnNoLiveUpdates = document.getElementById("no-live-updates");
 
             gamesRefresh(btnLiveUpdates, btnNoLiveUpdates, round)
-
         }else{
-            buttonLiveUpdates.innerHTML = `<button class='no-live-updates' inactive >Live updates are not available</button>`;
+            buttonLiveUpdates.innerHTML = `
+            <button class='no-live-updates' disabled>
+                No live games right now
+            </button>`;
             allGamesBoxDiv.appendChild(buttonLiveUpdates);
+
+            clearInterval(localStorage.getItem('localStInterval'));
         }
 
-
+        console.log('from games:');
+        console.log(localStorage.getItem('localStInterval'))
     }).catch(err => {
         console.log(err)
     });

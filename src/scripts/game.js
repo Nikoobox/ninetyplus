@@ -16,7 +16,11 @@ const renderGameById = (fixtureId, score1, score2) => {
 
     axios.get(`./game?fixtureId=${fixtureId}`).then((res) => {
         console.log(res.data.response);
-    
+
+        //clear live updates interval and local storage
+        clearInterval(localStorage.getItem('localStInterval'));
+        localStorage.clear();
+
         const oneGameContentDiv = document.getElementById("one-game");
         const fieldDiv = document.createElement('div');
         const squadsDiv = document.createElement('div');

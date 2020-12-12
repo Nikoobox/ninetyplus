@@ -96,7 +96,7 @@
             align-items: center;
             justify-content: center;
             width:100%;
-            margin:15px 0;
+            margin:12px 0;
             transition: all 0.3s;
             &:hover{
                 cursor: pointer;
@@ -156,6 +156,45 @@
                     }
                 }
             } 
+        }
+        .live-updates-box{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            // margin:10px 0;
+            padding:10px 0;
+            button{
+                font-size:18px;
+                padding:3px 5px;
+                // margin:5px 50px;
+            }
+            #live-updates{
+                background:white;
+                border: 2px $mainBlack solid;
+                border-radius:5px;
+                transition: all ease 0.2s;
+                &:hover{
+                    cursor: pointer;
+                    background: $mainPink;
+                }
+               
+            }
+            #no-live-updates{
+                background:white;
+                border: 2px $mainBlack solid;
+                border-radius:5px;
+                transition: all ease 0.2s;
+                &:hover{
+                    cursor: pointer;
+                    background: $mainPink;
+                }
+                
+            }
+            .no-live-updates{
+                background:white;
+                // border: 2px $mainBlack solid;
+                
+            }
         }
     }
     .right{
