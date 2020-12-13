@@ -107,6 +107,20 @@ const renderGames = (round) => {
                 <div class='score'>${score2}</div>
             </div>
             `: '<div class="vs">vs</div>';
+
+            // if game is not started, display VOTE button 
+            const voteBtnDisplay = (gameStatus === 'NS')? 
+            `<div class='voting-btn-box'>
+                <button 
+                    class='voting-btn' 
+                    team1-name='${team1}'
+                    team2-name='${team2}'
+                    team1-logo='${logo1}'
+                    team2-logo='${logo2}'
+                    gameId=${gameId}>
+                    VOTE
+                </button>
+            </div>` : '';
             
             fixtureRowDiv.innerHTML =  `
             <div class='game-status-section'>${fix.fixture.status.long}</div>
@@ -119,17 +133,7 @@ const renderGames = (round) => {
                 <div class="logo"><img src="${logo2}"/></div>
                 <div class="name">${team2}</div>
             </div>
-            <div class='voting-btn-box'>
-                <button 
-                    class='voting-btn' 
-                    team1-name='${team1}'
-                    team2-name='${team2}'
-                    team1-logo='${logo1}'
-                    team2-logo='${logo2}'
-                    gameId=${gameId}>
-                    VOTE
-                </button>
-            </div>
+            ${voteBtnDisplay}
             `;
             
             if (gameStatus !== 'NS') {
