@@ -1,5 +1,6 @@
 import axios from "axios";
 import renderGameById from './game';
+import renderVotingModal from './renderVotingModal';
 import gamesRefresh from './gamesRefresh';
 
 const renderGames = (round) => {
@@ -91,13 +92,13 @@ const renderGames = (round) => {
           
             const fixtureRowDiv = document.createElement('div');
             const gameStatusRowDiv = document.createElement('div');
+            const scoreBoxDiv = document.createElement('div');
+
             fixtureRowDiv.classList.add('fixture-box');
             gameStatusRowDiv.classList.add('game-status-row');
+            scoreBoxDiv.classList.add('score-box');
 
             fixtureRowDiv.setAttribute('gameId', gameId );
-            
-            const scoreBoxDiv = document.createElement('div');
-            scoreBoxDiv.classList.add('score-box');
 
             // if game is live then show 'score', otherwise show 'vs'
             const temp = (gameLiveStatus.includes(gameStatus) || (gameStatus === 'FT')) ? `
@@ -117,18 +118,28 @@ const renderGames = (round) => {
             <div class='team2-box'>
                 <div class="logo"><img src="${logo2}"/></div>
                 <div class="name">${team2}</div>
-            </div>`;
+            </div>
+            <div class='voting-btn-box'>
+                <button 
+                    class='voting-btn' 
+                    team1-name='${team1}'
+                    team2-name='${team2}'
+                    team1-logo='${logo1}'
+                    team2-logo='${logo2}'
+                    gameId=${gameId}>
+                    VOTE
+                </button>
+            </div>
+            `;
             
             if (gameStatus !== 'NS') {
                 fixtureRowDiv.addEventListener('click', () => renderGameById(gameId, score1, score2));
             }
-
-            // gameStatusRowDiv.innerText = fix.fixture.status.long;
             
             allGamesBoxDiv.appendChild(fixtureRowDiv);
-            // allGamesBoxDiv.appendChild(gameStatusRowDiv);
+            renderVotingModal(allGamesBoxDiv, team1, team2);
         });
-        // console.log(liveGamesStatus);
+        
         const buttonLiveUpdates = document.createElement("div");
         buttonLiveUpdates.classList.add('live-updates-box');
         allGamesBoxDiv.appendChild(buttonLiveUpdates);
@@ -141,7 +152,7 @@ const renderGames = (round) => {
             newCounter ++;
             localStorage.setItem('localStCounter', newCounter);
             console.log(`newCounter is --> ${newCounter}`)
-            if (newCounter === 3){
+            if (newCounter === 5){
                 clearInterval(localStorage.getItem('localStInterval'));
                 localStorage.clear();
                 console.log('Local Storage was cleared')
@@ -169,7 +180,8 @@ const renderGames = (round) => {
         }
 
         console.log('from games:');
-        console.log(localStorage.getItem('localStInterval'))
+        console.log(localStorage.getItem('localStInterval'));
+
     }).catch(err => {
         console.log(err)
     });
