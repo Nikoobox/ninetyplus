@@ -1,28 +1,21 @@
 import "./styles/index.scss";
-
-
-import renderGames from "./scripts/games";
-import renderGameStat from "./scripts/gamestat";
+import currentRound from "./scripts/currentRound";
 import renderStandings from "./scripts/standings";
-import renderPlayerStat from "./scripts/standings";
 
-
-// request to update standings table
-// window.addEventListener("DOMContentLoaded", () => {
-//     renderStandings();
-// });
-
-// renderGames('Regular Season - 11');
 
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    let round = 'Regular Season - 12' ;
-    renderGames(round);
-    // renderGameStat();
-    renderStandings();
+    // let round = 'Regular Season - 12' ;
 
-    const navbarLogo = document.querySelector("#navbar-logo");
-    navbarLogo.addEventListener('click', () => renderGames(round));
+    // GET CURRENT ROUND AND RENDER GAMES AND STANDINGS
+    currentRound();
+    
+    // renderGames(round);
+    // renderGameStat();
+    
+
+    // const navbarLogo = document.querySelector("#navbar-logo");
+    // navbarLogo.addEventListener('click', () => renderGames(round));
 });
 
