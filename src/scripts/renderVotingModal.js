@@ -4,15 +4,13 @@ const renderVotingModal = (allGamesBoxDiv, t1ref, t2ref) => {
     const modalDiv = document.createElement('div');
     modalDiv.innerHTML =
         `
-            <div id="myVotingModal" class="modal-v">
-                <div class="modal-v-content">
-                    <span class="close-v">&times;</span>
-
-                    <div id='modal-v-box'>
-                    </div>
-
+        <div id="myVotingModal" class="modal-v">
+            <div class="modal-v-content">
+                <span class="close-v">&times;</span>
+                <div id='modal-v-box'>
                 </div>
             </div>
+        </div>
         `
     allGamesBoxDiv.appendChild(modalDiv);
 
@@ -24,7 +22,7 @@ const renderVotingModal = (allGamesBoxDiv, t1ref, t2ref) => {
         btn.addEventListener('click', () => {
             modalV.style.display = "block";
           
-            console.log('HI FROM VOTING MODAL')
+            // console.log('HI FROM VOTING MODAL')
             const name1 = btn.getAttribute('team1-name');
             const name2 = btn.getAttribute('team2-name');
             const logo1 = btn.getAttribute('team1-logo');

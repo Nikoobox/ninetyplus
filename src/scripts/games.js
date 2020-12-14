@@ -148,8 +148,8 @@ const renderGames = (round) => {
         buttonLiveUpdates.classList.add('live-updates-box');
         allGamesBoxDiv.appendChild(buttonLiveUpdates);
 
-        console.log('from games:');
-        console.log(localStorage.getItem('localStInterval'));
+        // console.log('from games:');
+        // console.log(localStorage.getItem('localStInterval'));
 
         if (localStorage.getItem('localStCounter') !== null){
             let newCounter = localStorage.getItem('localStCounter');
@@ -183,8 +183,8 @@ const renderGames = (round) => {
             clearInterval(localStorage.getItem('localStInterval'));
         }
 
-        console.log('from games:');
-        console.log(localStorage.getItem('localStInterval'));
+        // console.log('from games:');
+        // console.log(localStorage.getItem('localStInterval'));
 
     }).catch(err => {
         console.log(err)

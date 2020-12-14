@@ -12,6 +12,7 @@
   background-color: rgba(0,0,0,0.6);
   /* Modal Content */
   .modal-v-content {
+    position:relative;
     margin: auto;
     padding: 20px;
     width: 760px;
@@ -25,16 +26,41 @@
     /* The Close Logic */
     .close-v {
       color: white;
-      float: right;
+    //   float: right;
       font-size: 50px;
       font-weight: 300;
       transition: 0.1s all ease;
+      position: absolute;
+      right:20px;
+      top:0;
       &:hover,
       &:focus {
         color: $mainPink;
         text-decoration: none;
         cursor: pointer;
       }
+    }
+
+    // VOTE MODAL CONTENT
+    #modal-v-box{
+        .teams-row{
+            display:flex;
+            align-items: center;
+            .btn-box{
+                width:180px;
+                margin:10px;
+                #voteNum{
+                    background:white;
+                    padding:8px 12px;
+                    font-size: 18px;
+                    width:100%;
+                    &:hover{
+                        cursor: pointer;
+                        background:$mainPink;
+                    }
+                }
+            }
+        }
     }
 
   }

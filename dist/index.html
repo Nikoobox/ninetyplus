@@ -48,6 +48,35 @@
         </div>
     </div>
 
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBb-FKiVLHfmmyv0uOGueCEBZnVX4tg_-A",
+        authDomain: "ninety90-plus.firebaseapp.com",
+        projectId: "ninety90-plus",
+        storageBucket: "ninety90-plus.appspot.com",
+        messagingSenderId: "23655345953",
+        appId: "1:23655345953:web:146fbfddc9694e79241860",
+        measurementId: "G-H4DGJB1NP6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const db = firebase.firestore();
+</script>
+
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/d3-scale.v3.min.js"></script>
     <script src="./main.js"></script>
