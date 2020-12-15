@@ -156,14 +156,14 @@ const renderGames = (round) => {
             newCounter ++;
             localStorage.setItem('localStCounter', newCounter);
             console.log(`newCounter is --> ${newCounter}`)
-            if (newCounter === 5){
+            if (newCounter === 3){
                 clearInterval(localStorage.getItem('localStInterval'));
                 localStorage.clear();
                 console.log('Local Storage was cleared')
             }
         }
 
-        if (liveGamesStatus){
+        // if (liveGamesStatus){
     
             buttonLiveUpdates.innerHTML = `
             <button id='live-updates'>Activate Live Updates</button>
@@ -173,18 +173,17 @@ const renderGames = (round) => {
             const btnNoLiveUpdates = document.getElementById("no-live-updates");
 
             gamesRefresh(btnLiveUpdates, btnNoLiveUpdates, round)
-        }else{
-            buttonLiveUpdates.innerHTML = `
-            <button class='no-live-updates' disabled>
-                No live games right now
-            </button>`;
-            allGamesBoxDiv.appendChild(buttonLiveUpdates);
+        // }else{
+        //     buttonLiveUpdates.innerHTML = `
+        //     <button class='no-live-updates' disabled>
+        //         No live games right now
+        //     </button>`;
+        //     allGamesBoxDiv.appendChild(buttonLiveUpdates);
 
-            clearInterval(localStorage.getItem('localStInterval'));
-        }
+        //     clearInterval(localStorage.getItem('localStInterval'));
+        // }
 
-        // console.log('from games:');
-        // console.log(localStorage.getItem('localStInterval'));
+       
 
     }).catch(err => {
         console.log(err)
