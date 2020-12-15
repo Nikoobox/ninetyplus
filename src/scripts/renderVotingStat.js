@@ -74,12 +74,14 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
                         }
                     }
                     if (num === 1){
-                        let newData = { [gameId]: { team1: (vote1 + val), team2: vote2} }
-                        updateData(newData,keyId, vote1, vote2)
+                        let newVote1 = vote1 + val;
+                        let newData = { [gameId]: { team1: newVote1, team2: vote2} }
+                        updateData(newData, keyId, newVote1, vote2)
                         updated=true;
                     }else{
-                        let newData = { [gameId]: { team1: vote1, team2: (vote2 + val) } }
-                        updateData(newData, keyId, vote1, vote2);
+                        let newVote2 = vote2 + val;
+                        let newData = { [gameId]: { team1: vote1, team2: newVote2 } }
+                        updateData(newData, keyId, vote1, newVote2);
                         updated = true;
                     }
                 }
@@ -89,11 +91,13 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
                 let vote1 = 0;
                 let vote2 = 0;
                 if (num === 1) {
-                    let newData = { [gameId]: { team1: (vote1 + val), team2: vote2 } }
-                    addData(newData, vote1, vote2)
+                    let newVote1 = vote1 + val;
+                    let newData = { [gameId]: { team1: newVote1, team2: vote2 } }
+                    addData(newData, newVote1, vote2)
                 } else {
-                    let newData = { [gameId]: { team1: vote1, team2: (vote2 + val) } }
-                    addData(newData, vote1, vote2)
+                    let newVote2 = vote2 + val;
+                    let newData = { [gameId]: { team1: vote1, team2: newVote2 } }
+                    addData(newData, vote1, newVote2)
                 }
             }
         }).catch((err)=>{
