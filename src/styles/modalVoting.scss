@@ -46,10 +46,12 @@
         .teams-row{
             display:flex;
             align-items: center;
+            justify-content: center;
+            margin-right:20px;
             .btn-box{
                 width:180px;
                 margin:10px;
-                #voteNum{
+                #voteNum1, #voteNum2{
                     background:white;
                     padding:8px 12px;
                     font-size: 18px;
@@ -58,6 +60,22 @@
                         cursor: pointer;
                         background:$mainPink;
                     }
+                }
+            }
+        }
+        #voting-box{
+            color:white;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin-right:20px;
+            .voting-row{
+                margin:20px 20px 10px 0;
+                display:flex;
+                align-items: center;
+                .vote{
+                    margin: 0 140px;
+                    font-size: 28px;
                 }
             }
         }

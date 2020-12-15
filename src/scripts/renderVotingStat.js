@@ -5,80 +5,97 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
     modalVBox.innerHTML = `
         <div class='teams-row'>
             <div class='btn-box'>
-                <button id='voteNum' name='name1'>${name1}</button>
+                <button id='voteNum1' name='name1'>${name1}</button>
             </div>
             <div class='message'> Who will win? </div>
             <div class='btn-box'>
-                <button id='voteNum' name='name2'>${name2}</button>
+                <button id='voteNum2' name='name2'>${name2}</button>
             </div>
         </div>
-        <div class='voting-box'>
-            <div class='voting-box'>
-            </div>
+        <div id='voting-box'>
+            
         </div>
     `;
 
-    const voteData = document.getElementById("voteNum");
-    let val1 = 0;
-    let val2 = 0;
+    const voteData1 = document.getElementById("voteNum1");
+    const voteData2 = document.getElementById("voteNum2");
 
-    voteData.addEventListener('click', (e)=>{
-        console.log(e)
-        if (e.currentTarget.name === 'name1'){
-            getData(++val1, 1)
-            
-        } else {
-        }
+    voteData1.addEventListener('click', (e)=>{
+        getData(1, 1, parseInt(gameId))
     })
 
-    let data = {};
-
-    // const trackDataChanges = () => {
-    //     db.collection('game-winner').onSnapshot(res => {
+    voteData2.addEventListener('click', (e) => {
+        getData(1, 2, parseInt(gameId))
+    })
     
-    //         res.docChanges().forEach(change=>{
-    //             const doc = {...change.doc.data(), id: change.doc.id};
-    //             console.log(doc);
-    //             switch(change.type){
-    //                 case 'added':
-    //                     // console.log
-    //                     data = doc;
-    //                 break;
-    //                 case 'modified':
-    //                     data = doc;
-    //                 break;
-    //                 default: 
-    //                 break;
-    //             }
-    //         })
-    
-    //     })
-    // }
-    
-    const writeData = (val, num) => {
-        // if (num === 1){
-        //     db.collection('game-winner').doc('team1Votes').update({
-        //         team1Votes: val
-        //     })
-        // }
+    const addData = (data, vote1, vote2) => {
+        console.log('ho from addData function');
+        console.log(data);
+        db.collection('winner-votes').add(data);
+        renderVotes(vote1, vote2);
     }
 
-    const getData = (num) => {
-        let data = {};
-        db.collection('game-winner').get().then((res)=>{
-            console.log(res.docs[0].data());
-            data = res.docs[0].data();
-            
-            for(let ele in data){
-                console.log(data[ele])
-                if (ele === 'team1Votes'){
-                    writeData(data[ele], 1)
-                }else{
-                    writeData(data[ele], 2)
+    const renderVotes = (vote1, vote2)=>{
+        console.log(vote1, vote2)
+        const votingBoxDiv = document.getElementById("voting-box");
+        votingBoxDiv.innerHTML =
+            `
+            <div class='voting-row'>
+                <div class='votes1 vote'>${vote1}</div>
+                <div class='votes2 vote'>${vote2}</div>
+            </div>
+        `;
+    }
+
+    const updateData = (data, keyId, vote1, vote2) => {
+        console.log('ho from updateData function')
+        console.log(data);
+        db.collection('winner-votes').doc(keyId).update(data);
+        renderVotes(vote1, vote2);
+    }
+
+    const getData = (val, num, gameId) => {
+        db.collection('winner-votes').get().then((res)=>{
+            let updated = false;
+            res.docs.forEach(doc=>{
+                // console.log(doc.data(), doc.id)
+                // console.log(`${gameId}`);
+                // DATA IS EXISTING IN DATABASE. CALL UPDATE
+                if(parseInt(Object.keys(doc.data())[0]) === gameId){
+                    let keyId = doc.id;
+                    let votes = (doc.data()[gameId])
+                    let vote1=0;
+                    let vote2=0;
+                    for(let vote in votes){
+                        if (vote === 'team1'){
+                            vote1 = votes[vote]
+                        }else{
+                            vote2 = votes[vote]
+                        }
+                    }
+                    if (num === 1){
+                        let newData = { [gameId]: { team1: (vote1 + val), team2: vote2} }
+                        updateData(newData,keyId, vote1, vote2)
+                        updated=true;
+                    }else{
+                        let newData = { [gameId]: { team1: vote1, team2: (vote2 + val) } }
+                        updateData(newData, keyId, vote1, vote2);
+                        updated = true;
+                    }
+                }
+            })
+            // DATA IS NEW. CALL ADD
+            if (updated == false){
+                let vote1 = 0;
+                let vote2 = 0;
+                if (num === 1) {
+                    let newData = { [gameId]: { team1: (vote1 + val), team2: vote2 } }
+                    addData(newData, vote1, vote2)
+                } else {
+                    let newData = { [gameId]: { team1: vote1, team2: (vote2 + val) } }
+                    addData(newData, vote1, vote2)
                 }
             }
-
-           
         }).catch((err)=>{
             console.log(err)
         });
