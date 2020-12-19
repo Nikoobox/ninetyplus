@@ -2,20 +2,20 @@ import axios from "axios";
 // import renderGameById from './game';
 
 const renderPlayerStat = (playerIdm, teamIdm, fixtureIdm, FixturePlayersStatm) => {
-    console.log('hi from  RENDER PLAYER STAT');
-    console.log(playerIdm);
-    console.log(teamIdm);
-    console.log(fixtureIdm);
-    console.log(FixturePlayersStatm);
+    // console.log('hi from  RENDER PLAYER STAT');
+    // console.log(playerIdm);
+    // console.log(teamIdm);
+    // console.log(fixtureIdm);
+    // console.log(FixturePlayersStatm);
 
     let teamInfo = {};
     let playerInfo={};
     let playerStat = {};
 
     FixturePlayersStatm.forEach((squad)=>{
-        console.log(squad);
-        console.log(teamIdm);
-        console.log(squad.team.id)
+        // console.log(squad);
+        // console.log(teamIdm);
+        // console.log(squad.team.id)
         if (squad.team.id === teamIdm) {
             teamInfo = squad;
             squad.players.forEach((player, idx)=>{
@@ -27,9 +27,9 @@ const renderPlayerStat = (playerIdm, teamIdm, fixtureIdm, FixturePlayersStatm) =
         };
     })
 
-    console.log(teamInfo);
-    console.log(playerInfo);
-    console.log(playerStat);
+    // console.log(teamInfo);
+    // console.log(playerInfo);
+    // console.log(playerStat);
 
     const modalBox = document.getElementById("modal-box");
     //check if goalkeeper redner one thing , for field player- another

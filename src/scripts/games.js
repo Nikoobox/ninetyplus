@@ -4,7 +4,7 @@ import renderVotingModal from './renderVotingModal';
 import gamesRefresh from './gamesRefresh';
 
 const renderGames = (round) => {
-    console.log(round)
+    // console.log(round)
     const allGamesDiv = document.getElementById("all-games")
     const allGamesBoxDiv = document.createElement("div");
     allGamesDiv.innerHTML = "<div></div>";
@@ -12,7 +12,7 @@ const renderGames = (round) => {
     leagueInfoDiv.classList.add('left');
 
     axios.get(`./games?round=${round}`).then((res) => {
-        console.log(res.data.response);
+        // console.log(res.data.response);
         const fixturesArr = res.data.response;
         const sectionNameDiv = document.createElement("div");
         sectionNameDiv.classList.add("section-name");
@@ -29,18 +29,18 @@ const renderGames = (round) => {
                     <img src="${res.data.response[0].league.flag}"/>
                 </div>
             </div>
-            <div class='league-name'>
-                ${res.data.response[0].league.name}
-            </div>
             <div class='logo-box'>
-                <img src="${res.data.response[0].league.logo}"/>
+            <img src="${res.data.response[0].league.logo}"/>
+            </div>
+            <div class='league-name'>
+            ${res.data.response[0].league.name}
             </div>
             <div class='season-box'>
-                Season ${res.data.response[0].league.season}-${nextSeason}
+                ${res.data.response[0].league.season}-${nextSeason}
             </div>
           
             <div class='epl-link'>
-                <a href='https://www.premierleague.com/'>Visit EPL</a>   
+                <a href='https://www.premierleague.com/' rel='noopener noreferrer' target="_blank">Visit EPL</a>   
             </div>
         </div>
         `;
@@ -52,13 +52,13 @@ const renderGames = (round) => {
 
         sectionNameDiv.innerHTML = `
             <div class='roundPrev'>
-                <<   Round ${prevRound} 
+                << GO TO ROUND ${prevRound} 
             </div>
             <div class='roundCurr'>
-                All Games - Round ${currentRound} 
+                ALL GAMES - ROUND ${currentRound} 
             </div>
             <div class='roundNext'>
-                Round ${nextRound}   >>
+                GO TO ROUND ${nextRound} >>
             </div>
             `
         allGamesDiv.append(sectionNameDiv);
@@ -155,19 +155,19 @@ const renderGames = (round) => {
             let newCounter = localStorage.getItem('localStCounter');
             newCounter ++;
             localStorage.setItem('localStCounter', newCounter);
-            console.log(`newCounter is --> ${newCounter}`)
+            // console.log(`newCounter is --> ${newCounter}`)
             if (newCounter === 3){
                 clearInterval(localStorage.getItem('localStInterval'));
                 localStorage.clear();
-                console.log('Local Storage was cleared')
+                // console.log('Local Storage was cleared')
             }
         }
 
         // if (liveGamesStatus){
     
             buttonLiveUpdates.innerHTML = `
-            <button id='live-updates'>Activate Live Updates</button>
-            <button id='no-live-updates'>Stop Live Updates</button>
+            <button id='live-updates'>ACTIVATE LIVE UPDATES</button>
+            <button id='no-live-updates'>STOP LIVE UPDATES</button>
             `;
             const btnLiveUpdates = document.getElementById("live-updates");
             const btnNoLiveUpdates = document.getElementById("no-live-updates");

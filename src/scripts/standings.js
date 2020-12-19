@@ -24,6 +24,7 @@ const renderStandings= () => {
             teamDiv.classList.add("team-standing-row");
             teamRankBoxDiv.classList.add("team-rank-box");
             teamRankDiv.classList.add("team-rank");
+            teamPointsDiv.classList.add("team-points");
 
             teamRankBoxDiv.append(teamRankDiv, teamNameDiv)
             teamDiv.append(teamRankBoxDiv, teamPointsDiv);

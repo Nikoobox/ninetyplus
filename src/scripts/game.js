@@ -5,7 +5,7 @@ import getFixturePlayersStat from "./getFixturePlayersStat";
 import renderPlayerModal from './renderPlayerModal';
 
 const renderGameById = (fixtureId, score1, score2) => {
-    console.log('Hi from game!');
+    // console.log('Hi from game!');
 
     const leagueInfoDiv = document.getElementById("league-info");
     leagueInfoDiv.innerHTML = "<div></div>";
@@ -15,7 +15,7 @@ const renderGameById = (fixtureId, score1, score2) => {
     allGamesContentDiv.innerHTML = "<div id='one-game'></div>";
 
     axios.get(`./game?fixtureId=${fixtureId}`).then((res) => {
-        console.log(res.data.response);
+        // console.log(res.data.response);
 
         //clear live updates interval and local storage
         clearInterval(localStorage.getItem('localStInterval'));

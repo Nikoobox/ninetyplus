@@ -1,24 +1,29 @@
+body{
+    background:$mainDarkBlue;
+    color:white;
+}
+
 .main-container{
+    margin-top:15px;
     height:100%;
 }
 .main-box{
     display:flex;
     justify-content: space-between;
     margin:auto;
-    margin-top:15px;
-    margin-bottom:20px;
-
+    // margin-top:15px;
+    // margin-bottom:20px;
     height:610px;
     width:1250px;
-    box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.2);
-    @media (min-width: 1400px) {
+    @media (min-width: 1600px) {
         margin-top:100px;
     }
     .left{
         width:280px;
-        background:$mainGrey;
-        color:$mainBlack;
+        border: 1px $mainPink solid;
+        color:white;
         padding-top:20px;
+        letter-spacing:0.5px;
         .league-box{
             display:flex;
             flex-direction: column;
@@ -37,12 +42,12 @@
                 }
             }
             .league-name{
-                margin-top:100px;
-                margin-bottom: 10px;;
+                margin-top:10px;
                 font-size:22px;
                 font-weight:500;
             }
             .logo-box{
+                margin-top:120px;
                 width:100%;
                 text-align: center;
                 img{
@@ -50,19 +55,18 @@
                 }
             }
             .season-box{
-                margin-top:10px;
+                margin-top:5px;
             }
             .epl-link{
-                margin-top:190px;
+                margin-top:175px;
                 letter-spacing: 0.5px;
                 a{
-                    color: $mainBlack;
+                    color: white;
                     text-decoration:none;
                     transition: 0.2s all;
-                    border-bottom: $mainGrey solid 4px;
                     &:hover{
                         cursor:pointer;
-                        border-bottom: $mainPink solid 4px;
+                        color: $mainPink;
                     }
                 }
             }
@@ -70,23 +74,31 @@
     }
     .center{
         width:100%;
+        letter-spacing:0.5px;
         .section-name{
             display:flex;
             align-items: center;
             justify-content: space-around;
             margin: 15px 0 30px;
-            padding-bottom: 15px;;
-            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 15px;
             .roundPrev{
+                font-size:16px;
+                transition: 0.2s ease-out all;
+                color: $mainPink;
                 &:hover{
                     cursor: pointer;
+                    color: white;
                 }
             }
             .roundCurr{
-                font-size:18px;
+                font-size:20px;
             }
             .roundNext{
+                transition: 0.2s ease-out all;
+                font-size:16px;
+                color: $mainPink;
                 &:hover{
+                    color: white;
                     cursor: pointer;
                 }
             }
@@ -101,7 +113,7 @@
             transition: all 0.3s;
             &:hover{
                 cursor: pointer;
-                background:$mainGrey;
+                background:$mainBlack;
             }
             .team1-box{
                 width:300px;
@@ -114,6 +126,7 @@
                     text-align: end;
                     margin-right:8px;
                     font-size:18px;
+                    font-weight:300;
                 }
                 .logo{
                     img{
@@ -129,15 +142,16 @@
             .score-box{
                 display:flex;
                 .score{
-                    background:$mainLightBlack;
-                    color:white;
+                    background:white;
+                    color: $mainBlack;
                     width:25px;
                     height:30px;
                     margin:1px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 18px;;
+                    font-size: 18px;
+                    font-weight:bold;
                 }
             }
             .team2-box{
@@ -151,6 +165,7 @@
                     text-align: start;
                     margin-left:8px;
                     font-size:18px;
+                    font-weight:300;
                 }
                 .logo{
                     img{
@@ -164,21 +179,23 @@
             position:absolute;
             font-size:14px;
             font-weight:300;
-            left:20px;
+            left:30px;
             letter-spacing: 0.3px;;
         }
          .voting-btn-box{
-            // display: none; 
-            color: $mainDarkGrey;
             position:absolute;
             font-size:14px;
-            right:20px;
-            border:1px solid black;
+            right:30px;
             .voting-btn{
-                background:white;
+                border:1px solid white;
+                background:transparent;
                 padding:8px 10px;
-                // margin:5px;
+                color: white;
+                transition: all ease-out 0.2s;
                 &:hover{
+                    border:1px solid $mainPink;
+                    background: $mainPink ;
+                    color: $mainBlack;
                     cursor: pointer;
                 }
             }
@@ -188,31 +205,34 @@
             align-items: center;
             justify-content: space-between;
             padding:10px 0;
+            margin-top:25px;
             button{
-                font-size:18px;
-                padding:5px 8px;
-                border-radius:5px;
+                font-size:16px;
+                padding:8px 12px;
+                border:0;
             
             }
             #live-updates{
-                background:white;
-                border: 2px $mainBlack solid;
-                transition: all ease 0.2s;
-                margin-left:20px;
+                background:transparent;
+                border: 1px $mainPink solid;
+                transition: all ease-out 0.1s;
+                margin-left:30px;
+                color: white;
                 &:hover{
                     cursor: pointer;
-                    background: $mainPink;
+                    background: $mainDarkPink;
                 }
                 
             }
             #no-live-updates{
-                background:white;
-                border: 2px $mainBlack solid;
-                transition: all ease 0.2s;
-                margin-right:20px;
+                background:transparent;
+                border: 1px $mainPink solid;
+                margin-right:30px;
+                color: white;
+                transition: all ease-out 0.1s;
                 &:hover{
                     cursor: pointer;
-                    background: $mainPink;
+                    background: $mainDarkPink;
                 }
             }
             .no-live-updates{
@@ -222,55 +242,69 @@
             button[disabled] { 
                 pointer-events: none;
             }
+            #live-updates[disabled] { 
+                color: $mainDarkGrey;
+                border: 1px $mainDarkGrey solid;
+            }
+             #no-live-updates[disabled] { 
+                color: $mainDarkGrey;
+                border: 1px $mainDarkGrey solid;
+            }
+            
         }
     }
     .right{
-        background: $mainPink;
+        border-left: solid 1px $mainPink; 
+        letter-spacing:1px;
         .league-standing{
-            width:300px;
+            width:290px;
             display:block;
             .name{
                 margin:auto;
                 margin-top:15px;
-                margin-bottom:15px;
+                margin-bottom:10px;
                 font-size:18px;
                 text-align: center;
-                border-bottom:4px $mainBlack solid;
-                width:50%;
+                width:60%;
             }
             .header{
                 display:flex;
                 align-items: center;
                 color:$mainDarkGrey;
-                font-weight:300;
                 font-size: 14px;
                 margin-bottom: 5px;
                 .pos{
-                    margin-left:35px;
+                    margin-left:30px;
                 }
                 .team-name{
                     margin-left:10px;
                 }
                 .points{
-                    margin-left:175px;
+                    margin-left:165px;
                 }
             }
             .team-standing-box{
                 font-size:15px;
-                margin: 2px 20px 10px;
+                margin: 2px 20px 10px 20px;
+                
                 .team-standing-row{
-                    border-bottom: 1px solid $mainDarkPink;
                     margin: 2px;
-                    margin-bottom:6px;
+                    margin-bottom:8px;
                     display:flex;
                     justify-content: space-between;
                     .team-rank-box{
+                        display:flex;
+                        font-weight:300;
                         .team-rank{
                             width:20px;
                             text-align: end;
                             margin-right:10px;
+                            color: $mainPink;
                         }
-                        display:flex;
+                    }
+                    .team-points{
+                        padding-left:20px;
+                        color: $mainPink;
                     }
                 }
             }

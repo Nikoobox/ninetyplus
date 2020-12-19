@@ -3,12 +3,13 @@
     display:flex;
     align-items: space-between;
     justify-content: space-between;
+    letter-spacing: 0.5px;
     .squad-box{
         margin-left:15px;
         width:25%;
         display:flex;
         flex-direction: column;
-        letter-spacing:0.2px;
+        
         #team-1-box{
             .team-1-header-box{
                 display:flex;
@@ -16,7 +17,7 @@
                 margin-bottom: 3px;
                 .name{
                     font-size: 18px;
-                    border-bottom: 4px solid $mainLightBlack;
+                    border-bottom: 4px solid white;
                 }
                 .logo{
                     img{
@@ -26,7 +27,7 @@
                 }
             }
             .team-1{
-                margin-bottom:3px;
+                margin-bottom:4px;
                 font-size:15px;
                 display:flex;
                 .number{width:30px; color:$mainDarkGrey}
@@ -50,7 +51,7 @@
                 }
             }
             .team-2{
-                margin-bottom:3px;
+                margin-bottom:4px;
                 font-size:15px;
                 display:flex;
                 .number{width:30px;color:$mainDarkGrey}

@@ -7,7 +7,7 @@ const renderGameStat = (fixtureId, score1, score2) => {
     // const testBoxDiv = document.createElement("div");
     // testBoxDiv.classList.add("test-box");
     axios.get(`/gamestat/?fixtureId=${fixtureId}`).then((res) => {
-        console.log(res.data.response);
+        // console.log(res.data.response);
         const gameStatDiv = document.createElement('div');
         gameStatDiv.classList.add('game-stat-box');
         standingsDiv.append(gameStatDiv);
@@ -41,7 +41,7 @@ const renderGameStat = (fixtureId, score1, score2) => {
         // console.log(possession)
         gameStatDiv.innerHTML =
             `
-            <div class='game-stat-title'>Game Statistics</div>
+            <div class='game-stat-title'>GAME STATISTICS</div>
             <div class='stat-box'>
                 <div class='scoreBox'>
                     <div class="teamHome">

@@ -6,7 +6,7 @@
     margin-top:10px;
     .game-stat-title{
         font-size:18px;
-        color:$mainDarkGrey;
+        // color:$mainDarkGrey;
     }
     .stat-box{
         width:100%;
@@ -40,18 +40,20 @@
                     text-align: center;
                 }
                 .teamScore1{
-                    font-size:22px;
-                    width: 35px;
+                    font-size:26px;
+                    width: 40px;
                     text-align: center;
-                    border: 2px solid $mainBlack;
-                    border-radius:3px;
+                    border: 1px solid white;
+                    // border-radius:3px;
+                    // padding:5px;
                 }
                 .teamScore2{
-                    font-size:22px;
-                    width: 35px;
+                    font-size:26px;
+                    width: 40px;
+                    
                     text-align: center;
-                    border: 2px solid $mainBlack;
-                    border-radius:3px;
+                    border: 1px solid white;
+                    // border-radius:3px;
                 }
             }
         }
@@ -65,7 +67,8 @@
             #poss {
                 width: 1%;
                 height: 15px;
-                background-color: $mainLightBlack;
+                background-color:white;
+                border-right: 7px solid $mainBlack;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
@@ -77,7 +80,8 @@
             #shotsOn {
                 width: 1%;
                 height: 15px;
-                background-color: $mainLightBlack;
+                background-color:white;
+                border-right: 7px solid $mainBlack;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
@@ -89,7 +93,8 @@
             #shotsOff {
                 width: 1%;
                 height: 15px;
-                background-color: $mainLightBlack;
+                background-color:white;
+                border-right: 7px solid $mainBlack;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
@@ -101,7 +106,8 @@
             #fouls {
                 width: 1%;
                 height: 15px;
-                background-color: $mainLightBlack;
+                background-color:white;
+                border-right: 7px solid $mainBlack;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
@@ -113,7 +119,8 @@
             #yc {
                 width: 1%;
                 height: 15px;
-                background-color: $mainLightBlack;
+                background-color:white;
+                border-right: 7px solid $mainBlack;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
             }
