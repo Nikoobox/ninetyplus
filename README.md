@@ -9,22 +9,66 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 
 ## Libraries and Languages
 
-* D3.js
-* API-Football to collect the data
 * Javascript
-* HTML5
-* CSS3/SCSS
 * Node.js / Express
+* HTML5
+* CSS3
+* API-Football: Restful API for soccer data
 * Firebase Firestore database
+* D3.js
+
 
 ## Features
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Each player game statistics is displayed on click.
 ![Games](dist/images/games2.gif)
-* Live updates feature allow users to stay informed. Live updates could be manually turned off to save data.
+<p>&nbsp;</p>
+
+* Live updates feature could be manually turned on/off to control data usage. 
 ![Live Demo](dist/images/live_demo.gif)
+<p>&nbsp;</p>
+
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and will be displayed with by D3.js.
 ![Voting](dist/images/voting.gif)
+<p>&nbsp;</p>
+
+## Code Highlights
+
+Live updates is a key feature of 90PLUS web app. When 'Activate Live Updates' button is clicked, gamesRefresh.js function stores setInterval id into Local Starage to allow page refresh. Set interval reference is cleared when user clicks on 'Stop Live Updates'.
+
+```
+//gamesRefresh.js
+
+
+const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
+
+    let interval;
+    
+    btnLiveUpdates.addEventListener('click', () => {
+        renderGames(round)
+        interval = setInterval(() => renderGames(round), 10000);
+        localStorage.setItem('localStInterval', interval);
+        let counter = 0
+        localStorage.setItem('localStCounter', counter);
+    });
+    
+    btnNoLiveUpdates.addEventListener('click', () => {
+        clearInterval(localStorage.getItem('localStInterval'));
+        localStorage.removeItem('localStInterval');
+
+        btnLiveUpdates.disabled = false;
+        btnNoLiveUpdates.setAttribute('disabled', true);
+    });
+
+    if (localStorage.getItem('localStInterval') !== null){
+        btnLiveUpdates.setAttribute('disabled', true);
+        btnNoLiveUpdates.disabled = false;
+    }else{
+        btnLiveUpdates.disabled = false;
+        btnNoLiveUpdates.setAttribute('disabled', true);
+    }
+}
+```
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
