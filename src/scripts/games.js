@@ -2,6 +2,7 @@ import axios from "axios";
 import renderGameById from './game';
 import renderVotingModal from './renderVotingModal';
 import gamesRefresh from './gamesRefresh';
+import eplLogo from '../../dist/images/blacklogo.png';
 
 const renderGames = (round) => {
     // console.log(round)
@@ -20,7 +21,7 @@ const renderGames = (round) => {
         let liveGamesStatus = false;
 
         const nextSeason = res.data.response[0].league.season + 1;
-
+        // <img src="${res.data.response[0].league.logo}" />
         leagueInfoDiv.innerHTML = `
         <div class='league-box'>
             <div class='country-box'>
@@ -30,7 +31,7 @@ const renderGames = (round) => {
                 </div>
             </div>
             <div class='logo-box'>
-            <img src="${res.data.response[0].league.logo}"/>
+            <img src="${eplLogo}"/>
             </div>
             <div class='league-name'>
             ${res.data.response[0].league.name}
