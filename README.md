@@ -14,13 +14,11 @@ Ninety Plus is a site for live soccer scores from the most polular soccer league
 * Firebase Firestore database
 
 ## Features
-* Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
-* Users can click on each player to see detailed satistics.
-
+* Each player game statistics is displayed on click.
 ![Games](dist/images/games2.gif)
-
-* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js
+* Live updates could be manually turned on/off.
+* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js.
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
