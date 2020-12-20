@@ -12,11 +12,6 @@ First will be the main home page as shown below.
     <img width="500" src="./assets/layout.png">
 </div>
 
-When user clicks on specific game, game info will be shown as following
-<div align="center">
-    <img width="500" src="./assets/layout2.png">
-</div>
-
 ### Navbar 
 * Will have logo, app name and links the Github, LinkedIn and Personal website.
 
