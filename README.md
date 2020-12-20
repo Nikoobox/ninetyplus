@@ -5,7 +5,7 @@
 </div>
 
 ## Background and Overview 
-NinetyPlus is a Web App for the live soccer scores from the most polular soccer league in a world - English Premier League. Get livetime data, teams line-ups and statistics. Data and statistics will be presented with D3.js javascript library, producing dynamic and interactive data.
+NinetyPlus is a Web App for the live soccer scores from the most polular soccer league in a world - English Premier League. Get lifetime data, teams line-ups and statistics. Data and statistics will be presented with D3.js javascript library, producing dynamic and interactive data.
 
 ## Libraries and Languages
 
