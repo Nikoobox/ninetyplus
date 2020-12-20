@@ -18,7 +18,7 @@ Ninety Plus is a site for live soccer scores from the most polular soccer league
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Users can click on each player to see detailed satistics.
 
-![Games](dist/images/games.gif)
+![Games](dist/images/games2.gif)
 
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js
 
