@@ -70,6 +70,19 @@ const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
 }
 ```
 
+Code below sets a newCounter variable to keep track of page refreshes (API calls). Currently, a newCounter is set to 3 for demostration purposes.
+```
+ if (localStorage.getItem('localStCounter') !== null){
+    let newCounter = localStorage.getItem('localStCounter');
+    newCounter ++;
+    localStorage.setItem('localStCounter', newCounter);
+    if (newCounter === 3){
+        clearInterval(localStorage.getItem('localStInterval'));
+        localStorage.clear();
+    }
+}
+```
+
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
 * Ideas brainstorming
