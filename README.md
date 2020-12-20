@@ -22,7 +22,7 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 * Each player game statistics is displayed on click.
 ![Games](dist/images/games2.gif).         
 
-* Live updates feature allow users to stay informed. Live updates could be manually turned off to save data.
+* Live updates feature could be manually turned on/off to control data usage. 
 ![Live Demo](dist/images/live_demo.gif).       
 
 
