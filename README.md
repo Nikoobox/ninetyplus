@@ -1,25 +1,7 @@
 # NinetyPlus
 
 ## Background and Overview 
-Site for live soccer scores from across the world. Get livetime game data, teams line-ups, formations and team statistics.
-Data and statistic will be presented with D3.js Javascript library for producing dynamic, interactive data.
-
-
-## Wireframes
-
-This app will have two screens. 
-First will be the main home page as shown below.
-<div align="center">
-    <img width="500" src="./assets/layout.png">
-</div>
-
-When user clicks on specific game, game info will be shown as following
-<div align="center">
-    <img width="500" src="./assets/layout2.png">
-</div>
-
-### Navbar 
-* Will have logo, app name and links the Github, LinkedIn and Personal website.
+Ninety Plus is a site for live soccer scores from the most polular soccer league in a world -English Premier League. Get livetime game data, teams line-ups, formations and fixtures statistics. Data and statistics is be presented with D3.js Javascript library, producing dynamic and interactive data.
 
 ## Libraries and Languages
 
@@ -28,17 +10,20 @@ When user clicks on specific game, game info will be shown as following
 * Javascript
 * HTML5
 * CSS3/SCSS
+* Node.js / Express
+* Firebase Firestore database
 
 ## Features
-* Visitors can see live scores for the selected league
-* Visitors can select specific game and see the team formation, lineup and other statistic
-* Some data will be displayed as bars 
-* Canvas will be used to draw soccer pitch where team players names will be shown. 
-* Users can click on each player to see data presented with D3.js 
-* Visitors can vote for either team and data will be displayed below in form of chart/bar by D3.js
+* Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
+* Visitors can select specific game and see the team formation, lineup and other game statistics.
+* Users can click on each player to see detailed satistics.
+
+![Games](dist/images/games.gif)
+
+* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js
 
 ## Implementation Timeline
-#### Preparation (12/6/2020) -1 Day, Sunday
+#### Preparation (12/6/2020) -0 Day, Sunday
 * Ideas brainstorming
 * UX/UI brainstorming
 * API research
@@ -53,7 +38,7 @@ When user clicks on specific game, game info will be shown as following
 * Get API key and make requests
 * Display some data from API request
 
-#### Football API (12/10/2020) -2 Day, Wednsesday, Thursday
+#### Football API (12/10/2020) -2 Days, Wednsesday, Thursday
 * Get API key and make requests
 * Display some data from API request
 * Research and implement basic of D3.js to display data
