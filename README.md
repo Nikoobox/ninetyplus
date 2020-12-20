@@ -1,8 +1,7 @@
 # NinetyPlus
 
 ## Background and Overview 
-Site for live soccer scores from across the world. Get livetime game data, teams line-ups, formations and team statistics.
-Data and statistic will be presented with D3.js Javascript library for producing dynamic, interactive data.
+Ninety Plus is a site for live soccer scores from the most polular soccer league in a world -English Premier League. Get livetime game data, teams line-ups, formations and fixtures statistics. Data and statistics is be presented with D3.js Javascript library, producing dynamic and interactive data.
 
 
 ## Wireframes
@@ -28,14 +27,14 @@ When user clicks on specific game, game info will be shown as following
 * Javascript
 * HTML5
 * CSS3/SCSS
+* Node.js / Express
+* Firebase Firestore database
 
 ## Features
-* Visitors can see live scores for the selected league
-* Visitors can select specific game and see the team formation, lineup and other statistic
-* Some data will be displayed as bars 
-* Canvas will be used to draw soccer pitch where team players names will be shown. 
-* Users can click on each player to see data presented with D3.js 
-* Visitors can vote for either team and data will be displayed below in form of chart/bar by D3.js
+* Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
+* Visitors can select specific game and see the team formation, lineup and other statistics.
+* Users can click on each player to see detailed satistics.
+* Visitors can vote for the game winner. The voting data is store with Firebase/firestore and displayed with by D3.js
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
