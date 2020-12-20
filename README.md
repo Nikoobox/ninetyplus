@@ -38,7 +38,7 @@ When user clicks on specific game, game info will be shown as following
 * Visitors can vote for either team and data will be displayed below in form of chart/bar by D3.js
 
 ## Implementation Timeline
-#### Preparation (12/6/2020) -1 Day, Sunday
+#### Preparation (12/6/2020) -0 Day, Sunday
 * Ideas brainstorming
 * UX/UI brainstorming
 * API research
@@ -53,7 +53,7 @@ When user clicks on specific game, game info will be shown as following
 * Get API key and make requests
 * Display some data from API request
 
-#### Football API (12/10/2020) -2 Day, Wednsesday, Thursday
+#### Football API (12/10/2020) -2 Days, Wednsesday, Thursday
 * Get API key and make requests
 * Display some data from API request
 * Research and implement basic of D3.js to display data
