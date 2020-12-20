@@ -1,7 +1,7 @@
 # NinetyPlus
 
 ## Background and Overview 
-Ninety Plus is a site for live soccer scores from the most polular soccer league in a world -English Premier League. Get livetime game data, teams line-ups, formations and fixtures statistics. Data and statistics is be presented with D3.js Javascript library, producing dynamic and interactive data.
+NinetyPlus is a site for live soccer scores from the most polular soccer league in a world - English Premier League. Get livetime game data, teams line-ups, formations and fixtures statistics. Data and statistics is be presented with D3.js Javascript library, producing dynamic and interactive data.
 
 ## Libraries and Languages
 
