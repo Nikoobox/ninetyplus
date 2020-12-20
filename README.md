@@ -1,4 +1,4 @@
-# 90Plus
+# 90PLUS
 
 <div align="start">
   <a href="https://ninety-plus.herokuapp.com/">Live Site</a>
