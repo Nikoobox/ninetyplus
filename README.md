@@ -3,14 +3,6 @@
 ## Background and Overview 
 Ninety Plus is a site for live soccer scores from the most polular soccer league in a world -English Premier League. Get livetime game data, teams line-ups, formations and fixtures statistics. Data and statistics is be presented with D3.js Javascript library, producing dynamic and interactive data.
 
-
-## Wireframes
-
-The main page has the following layout:
-<div align="start">
-    <img width="500" src="./assets/layout.png">
-</div>
-
 ## Libraries and Languages
 
 * D3.js
@@ -25,6 +17,9 @@ The main page has the following layout:
 * Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Users can click on each player to see detailed satistics.
+
+![Games](dist/images/games.gif)
+
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js
 
 ## Implementation Timeline
