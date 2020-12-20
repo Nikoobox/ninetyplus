@@ -36,7 +36,9 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 
 Live updates is a key feature of 90PLUS web app. When 'Activate Live Updates' button is clicked, gamesRefresh.js function stores setInterval id into Local Starage to allow page refresh. Set interval reference is cleared when user clicks on 'Stop Live Updates'.
 
-``
+```
+//gamesRefresh.js
+
 
 const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
 
@@ -58,7 +60,6 @@ const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
         btnNoLiveUpdates.setAttribute('disabled', true);
     });
 
-
     if (localStorage.getItem('localStInterval') !== null){
         btnLiveUpdates.setAttribute('disabled', true);
         btnNoLiveUpdates.disabled = false;
@@ -67,7 +68,7 @@ const gamesRefresh = (btnLiveUpdates, btnNoLiveUpdates, round) => {
         btnNoLiveUpdates.setAttribute('disabled', true);
     }
 }
-``
+```
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
