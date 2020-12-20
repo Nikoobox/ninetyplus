@@ -6,8 +6,7 @@ Ninety Plus is a site for live soccer scores from the most polular soccer league
 
 ## Wireframes
 
-This app will have two screens. 
-First will be the main home page as shown below.
+The main page has the following layout:
 <div align="center">
     <img width="500" src="./assets/layout.png">
 </div>
