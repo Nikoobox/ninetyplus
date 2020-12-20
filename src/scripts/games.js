@@ -5,7 +5,6 @@ import gamesRefresh from './gamesRefresh';
 import eplLogo from '../../dist/images/blacklogo.png';
 
 const renderGames = (round) => {
-    // console.log(round)
     const allGamesDiv = document.getElementById("all-games")
     const allGamesBoxDiv = document.createElement("div");
     allGamesDiv.innerHTML = "<div></div>";
@@ -21,7 +20,6 @@ const renderGames = (round) => {
         let liveGamesStatus = false;
 
         const nextSeason = res.data.response[0].league.season + 1;
-        // <img src="${res.data.response[0].league.logo}" />
         leagueInfoDiv.innerHTML = `
         <div class='league-box'>
             <div class='country-box'>
@@ -86,7 +84,6 @@ const renderGames = (round) => {
             const score2 = fix.goals.away;
             const gameStatus = fix.fixture.status.short;
             const gameId = fix.fixture.id;
-            // console.log(`gameStatus is: ${gameStatus} ${team1} vs ${team2}`)
 
             // to check if at leat one game is live to enable updates
             if (gameLiveStatus.includes(gameStatus)) liveGamesStatus = true;
@@ -145,27 +142,22 @@ const renderGames = (round) => {
             renderVotingModal(allGamesBoxDiv, team1, team2);
         });
         
+        //live update functionality
         const buttonLiveUpdates = document.createElement("div");
         buttonLiveUpdates.classList.add('live-updates-box');
         allGamesBoxDiv.appendChild(buttonLiveUpdates);
-
-        // console.log('from games:');
-        // console.log(localStorage.getItem('localStInterval'));
 
         if (localStorage.getItem('localStCounter') !== null){
             let newCounter = localStorage.getItem('localStCounter');
             newCounter ++;
             localStorage.setItem('localStCounter', newCounter);
-            // console.log(`newCounter is --> ${newCounter}`)
             if (newCounter === 3){
                 clearInterval(localStorage.getItem('localStInterval'));
                 localStorage.clear();
-                // console.log('Local Storage was cleared')
             }
         }
 
         // if (liveGamesStatus){
-    
             buttonLiveUpdates.innerHTML = `
             <button id='live-updates'>ACTIVATE LIVE UPDATES</button>
             <button id='no-live-updates'>STOP LIVE UPDATES</button>
@@ -183,8 +175,6 @@ const renderGames = (round) => {
 
         //     clearInterval(localStorage.getItem('localStInterval'));
         // }
-
-       
 
     }).catch(err => {
         console.log(err)

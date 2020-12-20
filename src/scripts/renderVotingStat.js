@@ -86,7 +86,7 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
                     }
                 }
             })
-            // DATA IS NEW. CALL ADD
+            // DATA IS NEW. CALL ADD FUNCTION
             if (updated == false){
                 let vote1 = 0;
                 let vote2 = 0;
