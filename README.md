@@ -20,16 +20,19 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 ## Features
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Each player game statistics is displayed on click.
-![Games](dist/images/games2.gif).         
+![Games](dist/images/games2.gif)
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 * Live updates feature could be manually turned on/off to control data usage. 
-![Live Demo](dist/images/live_demo.gif).       
-
+![Live Demo](dist/images/live_demo.gif)
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and will be displayed with by D3.js.
-![Voting](dist/images/voting.gif).       
-        
-        
+![Voting](dist/images/voting.gif)
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
