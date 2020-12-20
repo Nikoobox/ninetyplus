@@ -9,22 +9,27 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 
 ## Libraries and Languages
 
-* D3.js
-* API-Football: Restful API for soccer data
 * Javascript
 * HTML5
 * CSS3/SCSS
 * Node.js / Express
 * Firebase Firestore database
+* D3.js
+* API-Football: Restful API for soccer data
 
 ## Features
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Each player game statistics is displayed on click.
-![Games](dist/images/games2.gif)
+![Games](dist/images/games2.gif).         
+
 * Live updates feature allow users to stay informed. Live updates could be manually turned off to save data.
-![Live Demo](dist/images/live_demo.gif)
+![Live Demo](dist/images/live_demo.gif).       
+
+
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and will be displayed with by D3.js.
-![Voting](dist/images/voting.gif)
+![Voting](dist/images/voting.gif).       
+        
+        
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
