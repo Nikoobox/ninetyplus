@@ -25,7 +25,7 @@ The main page has the following layout:
 * Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Users can click on each player to see detailed satistics.
-* Visitors can vote for the game winner. The voting data is store with Firebase/firestore and displayed with by D3.js
+* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
