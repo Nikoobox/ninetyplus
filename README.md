@@ -11,9 +11,6 @@ The main page has the following layout:
     <img width="500" src="./assets/layout.png">
 </div>
 
-### Navbar 
-* Will have logo, app name and links the Github, LinkedIn and Personal website.
-
 ## Libraries and Languages
 
 * D3.js
