@@ -27,7 +27,7 @@ First will be the main home page as shown below.
 
 ## Features
 * Visitors can see live scores for the selected league. Live updates could be manually turned on/off.
-* Visitors can select specific game and see the team formation, lineup and other statistics.
+* Visitors can select specific game and see the team formation, lineup and other game statistics.
 * Users can click on each player to see detailed satistics.
 * Visitors can vote for the game winner. The voting data is store with Firebase/firestore and displayed with by D3.js
 
