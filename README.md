@@ -10,7 +10,7 @@ NinetyPlus is a Web App for the live soccer scores from the most polular soccer 
 ## Libraries and Languages
 
 * D3.js
-* API-Football to collect the data
+* API-Football: Restful API for soccer data
 * Javascript
 * HTML5
 * CSS3/SCSS
