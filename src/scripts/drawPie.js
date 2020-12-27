@@ -40,7 +40,7 @@ const drawPie = (vote1, vote2) => {
                 .attr('stroke', '#fff')
                 .attr('stroke-width', 2)
                 .attr('fill', d=>color(d.data.data.name))
-                .transition().duration(3000) 
+                .transition().duration(1500) 
                     .attrTween('d', arcTweenEnter);
 
     };
