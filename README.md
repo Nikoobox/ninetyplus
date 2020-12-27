@@ -20,15 +20,15 @@ NinetyPlus is a Web App for live soccer scores from the most polular soccer leag
 
 ## Features
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
-* Each player game statistics is displayed on click.
+* Game statistics of each player is displayed on click.
 ![Games](dist/images/games2.gif)
 <p>&nbsp;</p>
 
-* Live updates feature could be manually turned on/off to control data usage. 
+* Live updates feature is manually turned on/off to control the number of API calls. 
 ![Live Demo](dist/images/live_demo.gif)
 <p>&nbsp;</p>
 
-* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js.
+* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore online database and displayed with by D3.js animation library.
 ![Voting](dist/images/voting_d3.gif)
 <p>&nbsp;</p>
 
@@ -37,7 +37,7 @@ NinetyPlus is a Web App for live soccer scores from the most polular soccer leag
 ### Live Updates
 Live updates is a key feature of 90Plus web app. When 'Activate Live Updates' button is clicked, gamesRefresh.js function stores setInterval id into Local Starage to allow multiple page refresh. Set interval reference is cleared when user clicks on 'Stop Live Updates'.
 
-```
+```javascript
 //gamesRefresh.js
 
 
@@ -85,6 +85,8 @@ Code below sets a newCounter variable to keep track of page refreshes (API calls
 ```
 
 ### Data Animation with D3.js Library
+Voting feature allows users to vote for the winner of any future game. Voting data is displayed with D3.js javascript library.
+
 
 
 ## Implementation Timeline
