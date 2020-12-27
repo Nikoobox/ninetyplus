@@ -29,7 +29,7 @@ NinetyPlus is a Web App for live soccer scores from the most polular soccer leag
 <p>&nbsp;</p>
 
 * Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and will be displayed with by D3.js.
-![Voting](dist/images/voting.gif)
+![Voting](dist/images/voting_d3.gif)
 <p>&nbsp;</p>
 
 ## Code Highlights
