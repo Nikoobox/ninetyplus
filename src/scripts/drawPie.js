@@ -24,25 +24,20 @@ const drawPie = (vote1, vote2) => {
     const update = (data) => {
 
         color.domain(['team1', 'team2'])
-        // join enhanced (pie) data to path element
         const paths = graph.selectAll('path')
             .data(pie(data));
-            // console.log(pie(data))
 
         paths.exit().remove();
-
         paths.attr('d', arcPath);
 
         paths.enter()
             .append('path')
                 .attr('class', 'arc')
-                // .attr('d', arcPath)
                 .attr('stroke', '#fff')
                 .attr('stroke-width', 2)
                 .attr('fill', d=>color(d.data.data.name))
                 .transition().duration(1500) 
                     .attrTween('d', arcTweenEnter);
-
     };
 
     const data = pie([
@@ -52,9 +47,7 @@ const drawPie = (vote1, vote2) => {
 
     
     const arcTweenEnter = (d) => {
-        // console.log(d)
         let i = d3.interpolate(d.endAngle, d.startAngle);
-        
         return function(t){
             d.startAngle = i(t);
             return arcPath(d);
@@ -62,7 +55,5 @@ const drawPie = (vote1, vote2) => {
     };
     update(data);
 }
-
-
 
 export default drawPie;
