@@ -2,7 +2,7 @@
   display: none; 
   position: fixed; 
   z-index: 10; 
-  padding-top: 150px; 
+  padding-top: 100px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -48,17 +48,33 @@
             align-items: center;
             justify-content: center;
             margin-right:20px;
+            .message{
+              padding: 0 20px;
+            }
             .btn-box{
                 width:180px;
                 margin:10px;
-                #voteNum1, #voteNum2{
+                #voteNum1{
                     background:white;
                     padding:8px 12px;
                     font-size: 18px;
                     width:100%;
+                    transition: 0.2s all ease-out;
                     &:hover{
                         cursor: pointer;
                         background:$mainPink;
+                    }
+                }
+                #voteNum2{
+                    background:white;
+                    padding:8px 12px;
+                    font-size: 18px;
+                    width:100%;
+                    transition: 0.2s all ease-out;
+                    &:hover{
+                        cursor: pointer;
+                        background:$mainBlack;
+                        color:white;
                     }
                 }
             }
@@ -66,9 +82,10 @@
         #voting-box{
             color:white;
             display:flex;
+            flex-direction:column;
             align-items: center;
             justify-content: center;
-            margin-right:20px;
+            // margin-right:20px;
             .voting-row{
                 margin:20px 20px 10px 0;
                 display:flex;
@@ -77,6 +94,9 @@
                     margin: 0 140px;
                     font-size: 28px;
                 }
+            }
+            #pie-box{
+              width:320px;
             }
         }
     }

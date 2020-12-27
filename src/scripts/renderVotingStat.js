@@ -39,11 +39,12 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
     const renderVotes = (vote1, vote2)=>{
         // console.log(vote1, vote2)
         const votingBoxDiv = document.getElementById("voting-box");
+
         votingBoxDiv.innerHTML =
             `
             <div class='voting-row'>
-                <div class='votes1 vote'>${vote1}</div>
-                <div class='votes2 vote'>${vote2}</div>
+                <div class='votes1 vote'>${(vote1 / (vote1 + vote2) * 100).toFixed(1)}%</div>
+                <div class='votes2 vote'>${(vote2 / (vote1 + vote2) * 100).toFixed(1)}%</div>
             </div>
             <div id='pie-box'>
                 

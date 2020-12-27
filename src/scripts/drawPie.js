@@ -17,7 +17,7 @@ const drawPie = (vote1, vote2) => {
 
     const arcPath = d3.arc()
         .outerRadius(dims.radius)
-        .innerRadius(dims.radius/2)
+        .innerRadius(dims.radius/1.5)
     
     const color = d3.scaleOrdinal(['#f5b7cd', '#0D0D0E'])
 
@@ -46,7 +46,6 @@ const drawPie = (vote1, vote2) => {
     };
 
     const data = pie([
-        
         { name: 'team2', value: vote2 },
         { name: 'team1', value: vote1 }
     ])

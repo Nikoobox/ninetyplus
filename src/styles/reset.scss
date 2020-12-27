@@ -9,4 +9,6 @@ figcaption, footer, button, label {
     box-sizing: border-box;
     // background:$mainDarkGrey;
 }
-
+button:hover, button:focus {
+  outline: none;
+}
