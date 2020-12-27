@@ -1,4 +1,4 @@
-# 90PLUS
+# 90Plus
 
 <div align="start">
   <a href="https://ninety-plus.herokuapp.com/">Live Site</a>
@@ -28,13 +28,14 @@ NinetyPlus is a Web App for live soccer scores from the most polular soccer leag
 ![Live Demo](dist/images/live_demo.gif)
 <p>&nbsp;</p>
 
-* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and will be displayed with by D3.js.
+* Visitors can vote for the game winner. The voting data is stored with Firebase/Firestore and displayed with by D3.js.
 ![Voting](dist/images/voting_d3.gif)
 <p>&nbsp;</p>
 
 ## Code Highlights
 
-Live updates is a key feature of 90PLUS web app. When 'Activate Live Updates' button is clicked, gamesRefresh.js function stores setInterval id into Local Starage to allow page refresh. Set interval reference is cleared when user clicks on 'Stop Live Updates'.
+### Live Updates
+Live updates is a key feature of 90Plus web app. When 'Activate Live Updates' button is clicked, gamesRefresh.js function stores setInterval id into Local Starage to allow multiple page refresh. Set interval reference is cleared when user clicks on 'Stop Live Updates'.
 
 ```
 //gamesRefresh.js
@@ -82,6 +83,9 @@ Code below sets a newCounter variable to keep track of page refreshes (API calls
     }
 }
 ```
+
+### Data Animation with D3.js Library
+
 
 ## Implementation Timeline
 #### Preparation (12/6/2020) -0 Day, Sunday
