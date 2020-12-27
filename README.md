@@ -20,7 +20,7 @@ NinetyPlus is a Web App for live soccer scores from the most polular soccer leag
 
 ## Features
 * Visitors can select specific game and see the team formation, lineup and other game statistics.
-* Game statistics of each player is displayed on click.
+* Game statistics of each player is displayed on click using modal.
 ![Games](dist/images/games2.gif)
 <p>&nbsp;</p>
 
