@@ -25,9 +25,9 @@ const openInstructionsModal = () => {
                         </li>  
                         <li>OLDER games info could be accessed from the top navigation bar when clicking on pink button (ex. <span><< GO TO ROUND 16</span>)</li>
                         <li>Similarly, FUTURE games info could be accessed from the top navigation bar (ex. <span>GO TO ROUND 18 >></span>).</li>
-                        <li>User can click on LIVE or FINISHED fixtures to see details statistics. Players stats is available when hovering over any player on a pitch</li>
-                        <li>User can vote for the FUTURE game WINNER by clicking on the VOTE button</li>    
-                        <li>Live updates could be manually turn on by selecting <span>ACTIVATE LIVE UPDATES</span>. By default the page will be refreshed every 10 seconds 3 times for demonstration purposes. Live updates could be turn off by selecting <span>STOP LIVE UPDATES</span></li>      
+                        <li>User can click on LIVE or FINISHED fixtures to see detailed statistics. Players stats is available when hovering over any player on a pitch. Try it!</li>
+                        <li>User can vote for the game WINNER by clicking on the VOTE button. This feature is available only for future games</li>    
+                        <li>Live updates could be manually turn on by selecting <span>ACTIVATE LIVE UPDATES</span>. When selected, the page will be refreshed every 10 seconds for 3 times for demonstration purposes. Live updates could be turned off by selecting <span>STOP LIVE UPDATES</span></li>      
                     <ul>   
                 </div>
 
