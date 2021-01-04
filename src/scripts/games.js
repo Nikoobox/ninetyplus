@@ -41,9 +41,18 @@ const renderGames = (round) => {
             <div class='epl-link'>
                 <a href='https://www.premierleague.com/' rel='noopener noreferrer' target="_blank">Visit EPL</a>   
             </div>
+
+            <div class='by-ns'>
+                <div class='at-year'>
+                    <i class="far fa-copyright"></i>${new Date().getFullYear()}
+                </div>
+                <div class='name'>
+                    <a href='https://nikolayshatalov.com/' rel='noopener noreferrer' target="_blank">by Nikolay Shatalov</a>
+                </div>
+            </div>
         </div>
         `;
-
+{/* <i class="far fa-copyright"></i> <script type="text/javascript"> document.write(new Date().getFullYear());</script> by Nikolay Shatalov */}
         let currentRoundString = res.data.response[0].league.round;
         let currentRound = `${currentRoundString.split(' ').pop()} `;
         let prevRound = parseInt(currentRound) - 1;

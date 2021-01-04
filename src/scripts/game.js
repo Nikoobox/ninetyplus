@@ -3,6 +3,7 @@ import field from '../../assets/field.png';
 import renderGameStat from './gamestat';
 import getFixturePlayersStat from "./getFixturePlayersStat";
 import renderPlayerModal from './renderPlayerModal';
+import openInstructionsModal from './openInstructionsModal';
 
 const renderGameById = (fixtureId, score1, score2) => {
 
@@ -168,7 +169,7 @@ const renderGameById = (fixtureId, score1, score2) => {
             renderPlayerModal(squadsDiv, FixturePlayersStat, fixtureId);
         });
         
-
+        openInstructionsModal();
     }).catch(err => {
         console.log(err)
     });
