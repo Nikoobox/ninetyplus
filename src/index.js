@@ -9,8 +9,9 @@ window.addEventListener("DOMContentLoaded", () => {
     // let round = 'Regular Season - 12' ;
 
     // GET CURRENT ROUND AND RENDER GAMES AND STANDINGS
-    currentRound();
-    openInstructionsModal(); 
+    currentRound()
+        openInstructionsModal(); 
+    
     // renderGames(round);
     // renderGameStat();
     
