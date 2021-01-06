@@ -57,10 +57,10 @@ const renderGames = (round) => {
         let currentRound = `${currentRoundString.split(' ').pop()} `;
         let prevRound = parseInt(currentRound) - 1;
         let nextRound = parseInt(currentRound) + 1;
-
+        // prevRound = (prevRound === 0) ? '' : `<< GO TO ROUND ${ prevRound}` ;
         sectionNameDiv.innerHTML = `
             <div class='roundPrev'>
-                << GO TO ROUND ${prevRound} 
+                << GO TO ROUND ${ prevRound}
             </div>
             <div class='roundCurr'>
                 ALL GAMES - ROUND ${currentRound} 
@@ -76,7 +76,9 @@ const renderGames = (round) => {
         const previousRound = document.querySelector(".roundPrev");
         const followingRound = document.querySelector(".roundNext");
         
-        previousRound.addEventListener('click', () => renderGames(pRound));
+        prevRound !== 0 ? previousRound.addEventListener('click', () => renderGames(pRound)) : "";
+        // previousRound.addEventListener('click', () => renderGames(pRound));
+        nextRound === 38 ? '' :
         followingRound.addEventListener('click', () => renderGames(nRound));    
        
         allGamesBoxDiv.classList.add("all-games-box");
