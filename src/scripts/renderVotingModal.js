@@ -20,6 +20,7 @@ const renderVotingModal = (allGamesBoxDiv, t1ref, t2ref) => {
     
     votingBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
+            // user anonymous auth login
             auth.signInAnonymously();
             modalV.style.display = "block";
           
@@ -38,11 +39,14 @@ const renderVotingModal = (allGamesBoxDiv, t1ref, t2ref) => {
     })
 
     spanV.onclick = () => {
+        // user anonymous auth login
+        auth.signout();
         modalV.style.display = "none";
     }
 
     window.onclick = (event) => {
         if (event.target == modalV) {
+            // user anonymous auth login
             auth.signout();
             modalV.style.display = "none";
         }
