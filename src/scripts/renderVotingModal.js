@@ -40,14 +40,14 @@ const renderVotingModal = (allGamesBoxDiv, t1ref, t2ref) => {
 
     spanV.onclick = () => {
         // user anonymous auth login
-        auth.signout();
+        auth.signOut();
         modalV.style.display = "none";
     }
 
     window.onclick = (event) => {
         if (event.target == modalV) {
             // user anonymous auth login
-            auth.signout();
+            auth.signOut();
             modalV.style.display = "none";
         }
     }
