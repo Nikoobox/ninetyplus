@@ -51,12 +51,10 @@ const renderVotingStat = (name1, name2, logo1, logo2, gameId) => {
             </div> 
         `;
         drawPie(vote1, vote2)
-        // votingBoxDiv.appendChild(drawPie(vote1, vote2))
     }
    
 
     const updateData = (data, keyId, vote1, vote2) => {
-        // console.log('ho from updateData function')
         // console.log(data);
         db.collection('winner-votes').doc(keyId).update(data);
         renderVotes(vote1, vote2);
