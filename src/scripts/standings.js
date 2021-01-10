@@ -15,19 +15,25 @@ const renderStandings= () => {
             const teamRankBoxDiv = document.createElement("div");
             const teamNameDiv = document.createElement("div");
             const teamPointsDiv = document.createElement("div");
+            const teamGamesCountDiv = document.createElement("div");
             const teamRankDiv = document.createElement("div");
-            
+            const dataDiv = document.createElement("div");
+
             teamNameDiv.innerText = team.team.name;
             teamPointsDiv.innerText = team.points;
+            teamGamesCountDiv.innerText = team.all.played;
             teamRankDiv.innerText = team.rank;
 
             teamDiv.classList.add("team-standing-row");
             teamRankBoxDiv.classList.add("team-rank-box");
             teamRankDiv.classList.add("team-rank");
+            teamGamesCountDiv.classList.add("played-games");
             teamPointsDiv.classList.add("team-points");
+            dataDiv.classList.add("data-div");
 
             teamRankBoxDiv.append(teamRankDiv, teamNameDiv)
-            teamDiv.append(teamRankBoxDiv, teamPointsDiv);
+            dataDiv.append(teamGamesCountDiv, teamPointsDiv)
+            teamDiv.append(teamRankBoxDiv, dataDiv);
             standingBoxDiv.append(teamDiv);
             
         });

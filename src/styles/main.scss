@@ -111,9 +111,16 @@ body{
                 font-size:16px;
                 transition: 0.2s ease-out all;
                 color: $mainPink;
+                display:flex;
+                align-items: center;
+                justify-content: center;
                 &:hover{
                     cursor: pointer;
                     color: white;
+                }
+                i{
+                    margin-right:5px;
+                    font-size:24px;
                 }
             }
             .roundCurr{
@@ -123,9 +130,16 @@ body{
                 transition: 0.2s ease-out all;
                 font-size:16px;
                 color: $mainPink;
+                display:flex;
+                align-items: center;
+                justify-content: center;
                 &:hover{
                     color: white;
                     cursor: pointer;
+                }
+                i{
+                    margin-left:5px;
+                    font-size:24px;
                 }
             }
         }
@@ -305,8 +319,11 @@ body{
                 .team-name{
                     margin-left:10px;
                 }
+                .played{
+                    margin-left:130px;
+                }
                 .points{
-                    margin-left:165px;
+                    margin-left:20px;
                 }
             }
             .team-standing-box{
@@ -328,9 +345,20 @@ body{
                             color: $mainPink;
                         }
                     }
-                    .team-points{
-                        padding-left:20px;
-                        color: $mainPink;
+                    .data-div{
+                        display:flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width:50px;
+                        .played-games{
+                            margin-left:0;
+                            font-weight:300;
+                            color:$mainDarkGrey;
+                        }
+                        .team-points{
+                            padding-left:20px;
+                            color: $mainPink;
+                        }
                     }
                 }
             }

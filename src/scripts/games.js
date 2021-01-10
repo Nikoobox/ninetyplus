@@ -60,13 +60,13 @@ const renderGames = (round) => {
         // prevRound = (prevRound === 0) ? '' : `<< GO TO ROUND ${ prevRound}` ;
         sectionNameDiv.innerHTML = `
             <div class='roundPrev'>
-                << GO TO ROUND ${ prevRound}
+                <i class="fas fa-chevron-left"></i> GO TO ROUND ${ prevRound}
             </div>
             <div class='roundCurr'>
-                ALL GAMES - ROUND ${currentRound} 
+                 ALL GAMES - ROUND ${currentRound} 
             </div>
             <div class='roundNext'>
-                GO TO ROUND ${nextRound} >>
+                GO TO ROUND ${nextRound} <i class="fas fa-chevron-right"></i>
             </div>
             `
         allGamesDiv.append(sectionNameDiv);

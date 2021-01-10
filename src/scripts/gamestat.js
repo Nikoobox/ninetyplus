@@ -20,6 +20,7 @@ const renderGameStat = (fixtureId, score1, score2) => {
         const yc = [];
 
         teamsStat.forEach((teamStat, idx1) => {
+            console.log(teamStat)
             teamStat.statistics.forEach(stat => {
                 if (stat.type === "Ball Possession") {
                     possession.push(stat);
@@ -38,7 +39,7 @@ const renderGameStat = (fixtureId, score1, score2) => {
                 }
             })
         })
-        // console.log(possession)
+        
         gameStatDiv.innerHTML =
             `
             <div class='game-stat-title'>GAME STATISTICS</div>
@@ -58,6 +59,14 @@ const renderGameStat = (fixtureId, score1, score2) => {
                         <div class="teamName">${res.data.response[1].team.name}</div>
                         <div class='teamScore2'>${score2}</div>
                     </div>  
+                </div>
+                <div class='who-scored-box'>
+                    <div class='who-scored-team1'>
+                    
+                    </div>
+                    <div class='who-scored-team2'>
+                    
+                    </div>
                 </div>
                 <div id="possProgress">
                     <div id="poss"></div> 
