@@ -15,7 +15,7 @@ const renderGameById = (fixtureId, score1, score2) => {
     allGamesContentDiv.innerHTML = "<div id='one-game'></div>";
 
     axios.get(`./game?fixtureId=${fixtureId}`).then((res) => {
-
+        console.log(res.data)
         //clear live updates interval and local storage
         clearInterval(localStorage.getItem('localStInterval'));
         localStorage.clear();
@@ -81,6 +81,7 @@ const renderGameById = (fixtureId, score1, score2) => {
 
         //place players on a field according to their actual position and team formation
         res.data.response.forEach((command, cidx) => {
+            console.log(command)
             command.startXI.forEach((plr, pidx) => {
                 if (cidx === 0) {
                     const playerDiv = document.createElement('div');
@@ -162,9 +163,11 @@ const renderGameById = (fixtureId, score1, score2) => {
             })
         })
 
-        renderGameStat(fixtureId, score1, score2);
+        // renderGameStat(fixtureId, score1, score2);
         
         getFixturePlayersStat(fixtureId).then((FixturePlayersStat) => {
+            // console.log(FixturePlayersStat)
+            renderGameStat(fixtureId, score1, score2, FixturePlayersStat);
             //modal functionality
             renderPlayerModal(squadsDiv, FixturePlayersStat, fixtureId);
         });

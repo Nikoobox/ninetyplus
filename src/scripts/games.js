@@ -87,6 +87,7 @@ const renderGames = (round) => {
         const gameNotLiveStatus = ['NS', 'FT'];
         
         fixturesArr.forEach((fix, idx) => {
+            // console.log(fix);
             const team1 = fix.teams.home.name;
             const logo1 = fix.teams.home.logo;
             const team2 = fix.teams.away.name;

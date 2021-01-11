@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const renderGameStat = (fixtureId, score1, score2) => {
+const renderGameStat = (fixtureId, score1, score2, FixturePlayersStat) => {
     // console.log('HI FROM GAME STAT');
+   
     const oneGameContentDiv = document.getElementById("one-game");
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");
@@ -20,7 +21,7 @@ const renderGameStat = (fixtureId, score1, score2) => {
         const yc = [];
 
         teamsStat.forEach((teamStat, idx1) => {
-            console.log(teamStat)
+            // console.log(teamStat)
             teamStat.statistics.forEach(stat => {
                 if (stat.type === "Ball Possession") {
                     possession.push(stat);
@@ -90,6 +91,43 @@ const renderGameStat = (fixtureId, score1, score2) => {
                 <div class="stat-name"> Yellow Cards </div>  
             </div>
             `;
+       
+        const team1PlayersStat = Object.values(FixturePlayersStat[0].players);
+        const team2PlayersStat = Object.values(FixturePlayersStat[1].players);
+       
+        const team1ScoredPlDiv = document.querySelector(".who-scored-team1");
+        const team2ScoredPlDiv = document.querySelector(".who-scored-team2");
+
+        team1PlayersStat.forEach(player=>{
+            // console.log(player)
+            if (player.statistics[0].goals.total !== null){
+                for (let i = 0; i < player.statistics[0].goals.total; i++){
+                    const sc1Div = document.createElement('div');
+                    sc1Div.classList.add('goal-scorer');
+                    sc1Div.innerHTML = `
+                        ${player.player.name}
+                    `
+                    team1ScoredPlDiv.appendChild(sc1Div)
+
+                }
+            }
+        })
+
+        team2PlayersStat.forEach(player => {
+            
+            if (player.statistics[0].goals.total !== null) {
+                // console.log(player.player.name, player.statistics[0].goals.total)
+                // player.statistics[0].goals.total
+                for (let i = 0; i < player.statistics[0].goals.total; i++) {
+                    const sc2Div = document.createElement('div');
+                    sc2Div.classList.add('goal-scorer');
+                    sc2Div.innerHTML = `
+                        ${player.player.name}
+                    `
+                    team2ScoredPlDiv.appendChild(sc2Div)
+                }
+            }
+        })
 
         const renderStats = (stat1, total, idName) => {
             let elem = document.getElementById(idName);

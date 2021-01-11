@@ -21,7 +21,7 @@
             align-items:center;
             justify-content: space-between;
             margin-top:5px;
-            margin-bottom:60px;
+            margin-bottom:20px;
             padding:2px;
             .teamHome{
                 display:flex;
@@ -44,17 +44,24 @@
                     width: 40px;
                     text-align: center;
                     border: 1px solid white;
-                    // border-radius:3px;
-                    // padding:5px;
                 }
                 .teamScore2{
                     font-size:26px;
                     width: 40px;
-                    
                     text-align: center;
                     border: 1px solid white;
-                    // border-radius:3px;
                 }
+            }
+        }
+        .who-scored-box{
+            width:100%;
+            display:flex;
+            align-items:flex-start;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            .goal-scorer{
+                font-weight: 300;
+                color:$mainGrey;
             }
         }
         .stat-name{
