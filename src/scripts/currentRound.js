@@ -6,7 +6,7 @@ const currentRound = () => {
     
     axios.get(`currentround`).then((res) => {
         const currentR = res.data.response[0];
-        console.log(res.data.response[0]);
+        // console.log(res.data.response[0]);
 
         renderGames(currentR);
         renderStandings();
