@@ -1,367 +1,370 @@
-body{
-    background:$mainDarkBlue;
-    color:white;
+body {
+  background: $mainDarkBlue;
+  color: white;
 }
 
-.main-container{
-    height:100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-box{
-    display:flex;
-    justify-content: space-between;
-    margin-top:-60px;
-    height:610px;
-    width:1250px;
-    @media (min-width: 1600px) {
-        margin-top:-100px;
-    }
-    .left{
-        width:280px;
-        border: 1px $mainPink solid;
-        color:white;
-        padding-top:20px;
-        letter-spacing:0.5px;
-        .league-box{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            .country-box{
-                width:100%;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                .name{
-                    margin-right:10px;
-                }
-                .flag img{
-                    width:30px;
-                }
-            }
-            .league-name{
-                margin-top:10px;
-                font-size:22px;
-                font-weight:500;
-            }
-            .logo-box{
-                margin-top:120px;
-                width:100%;
-                text-align: center;
-                img{
-                    width:90%;
-                }
-            }
-            .season-box{
-                margin-top:5px;
-            }
-            .epl-link{
-                margin-top:20px;
-                letter-spacing: 0.5px;
-                a{
-                    color: $mainPink;
-                    text-decoration:none;
-                    transition: 0.2s all;
-                    &:hover{
-                        cursor:pointer;
-                        color: white;
-                    }
-                }
-            }
-            .by-ns{
-                margin-top:120px;
-                display:flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                .at-year{
-                    color: $mainDarkGrey;
-                    i{
-                        margin-right:3px;
-                    }
-                }
-                .name{
-                    margin-top:3px;
-                    a{
-                        color: $mainDarkGrey;
-                        transition: all 0.2s ease-out;
-                        text-decoration: none;
-                        font-size:17px;
-                        &:hover{
-                            color:white;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
+.main-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -60px;
+  height: 610px;
+  width: 1250px;
+  @media (min-width: 1600px) {
+    margin-top: -100px;
+  }
+  .left {
+    width: 280px;
+    border: 1px $mainPink solid;
+    color: white;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+    .league-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .country-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .name {
+          margin-right: 10px;
         }
-    }
-    .center{
-        width:100%;
-        letter-spacing:0.5px;
-        .section-name{
-            display:flex;
-            align-items: center;
-            justify-content: space-around;
-            margin: 15px 0 30px;
-            padding-bottom: 15px;
-            .roundPrev{
-                font-size:16px;
-                transition: 0.2s ease-out all;
-                color: $mainPink;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                &:hover{
-                    cursor: pointer;
-                    color: white;
-                }
-                i{
-                    margin-right:5px;
-                    font-size:24px;
-                }
-            }
-            .roundCurr{
-                font-size:20px;
-            }
-            .roundNext{
-                transition: 0.2s ease-out all;
-                font-size:16px;
-                color: $mainPink;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                &:hover{
-                    color: white;
-                    cursor: pointer;
-                }
-                i{
-                    margin-left:5px;
-                    font-size:24px;
-                }
-            }
+        .flag img {
+          width: 30px;
         }
-        .fixture-box{
-            position:relative;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            width:100%;
-            margin:12px 0 10px;
-            transition: all 0.3s;
-            &:hover{
-                cursor: pointer;
-                background:$mainBlack;
-            }
-            .team1-box{
-                width:300px;
-                display:flex;
-                justify-content: flex-end;
-                align-items: center;
-                margin-right:10px;
-                .name{
-                    width:100%;
-                    text-align: end;
-                    margin-right:8px;
-                    font-size:18px;
-                    font-weight:300;
-                }
-                .logo{
-                    img{
-                        width:30px;
-                    }
-                }
-            }
-            .vs{
-                color:$mainDarkGrey;
-                font-size:20px;
-                padding:0 18px;
-            }
-            .score-box{
-                display:flex;
-                .score{
-                    background:white;
-                    color: $mainBlack;
-                    width:25px;
-                    height:30px;
-                    margin:1px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 18px;
-                    font-weight:bold;
-                }
-            }
-            .team2-box{
-                display:flex;
-                width:300px;
-                justify-content: flex-start;
-                align-items: center;
-                margin-left:10px;
-                .name{
-                    width:100%;
-                    text-align: start;
-                    margin-left:8px;
-                    font-size:18px;
-                    font-weight:300;
-                }
-                .logo{
-                    img{
-                        width:30px;
-                    }
-                }
-            } 
+      }
+      .league-name {
+        margin-top: 10px;
+        font-size: 22px;
+        font-weight: 500;
+      }
+      .logo-box {
+        margin-top: 120px;
+        width: 100%;
+        text-align: center;
+        img {
+          width: 90%;
         }
-        .game-status-section{
+      }
+      .season-box {
+        margin-top: 5px;
+      }
+      .epl-link {
+        margin-top: 20px;
+        letter-spacing: 0.5px;
+        a {
+          color: $mainPink;
+          text-decoration: none;
+          transition: 0.2s all;
+          &:hover {
+            cursor: pointer;
+            color: white;
+          }
+        }
+      }
+      .by-ns {
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .at-year {
+          color: $mainDarkGrey;
+          i {
+            margin-right: 3px;
+          }
+        }
+        .name {
+          margin-top: 3px;
+          a {
             color: $mainDarkGrey;
-            position:absolute;
-            font-size:14px;
-            font-weight:300;
-            left:30px;
-            letter-spacing: 0.3px;;
-        }
-         .voting-btn-box{
-            position:absolute;
-            font-size:14px;
-            right:30px;
-            .voting-btn{
-                border:1px solid white;
-                background:transparent;
-                padding:8px 10px;
-                color: white;
-                transition: all ease-out 0.2s;
-                &:hover{
-                    border:1px solid $mainPink;
-                    background: $mainPink ;
-                    color: $mainBlack;
-                    cursor: pointer;
-                }
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+            font-size: 17px;
+            &:hover {
+              color: white;
+              cursor: pointer;
             }
+          }
         }
-        .live-updates-box{
-            display:flex;
+      }
+    }
+  }
+  .center {
+    width: 100%;
+    letter-spacing: 0.5px;
+    .section-name {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 15px 0 30px;
+      padding-bottom: 15px;
+      .roundPrev {
+        font-size: 16px;
+        transition: 0.2s ease-out all;
+        color: $mainPink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          cursor: pointer;
+          color: white;
+        }
+        i {
+          margin-right: 5px;
+          font-size: 24px;
+        }
+      }
+      .roundCurr {
+        font-size: 20px;
+      }
+      .roundNext {
+        transition: 0.2s ease-out all;
+        font-size: 16px;
+        color: $mainPink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          color: white;
+          cursor: pointer;
+        }
+        i {
+          margin-left: 5px;
+          font-size: 24px;
+        }
+      }
+    }
+    .fixture-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 12px 0 10px;
+      transition: all 0.3s;
+      &:hover {
+        cursor: pointer;
+        background: $mainBlack;
+      }
+      .team1-box {
+        width: 300px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 10px;
+        .name {
+          width: 100%;
+          text-align: end;
+          margin-right: 8px;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        .logo {
+          img {
+            width: 30px;
+          }
+        }
+      }
+      .vs {
+        color: $mainDarkGrey;
+        font-size: 20px;
+        padding: 0 18px;
+      }
+      .score-box {
+        display: flex;
+        .score {
+          background: white;
+          color: $mainBlack;
+          width: 25px;
+          height: 30px;
+          margin: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .team2-box {
+        display: flex;
+        width: 300px;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 10px;
+        .name {
+          width: 100%;
+          text-align: start;
+          margin-left: 8px;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        .logo {
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
+    .game-status-section {
+      color: $mainDarkGrey;
+      position: absolute;
+      font-size: 14px;
+      font-weight: 300;
+      left: 30px;
+      letter-spacing: 0.3px;
+    }
+    .voting-btn-box {
+      position: absolute;
+      font-size: 14px;
+      right: 30px;
+      .voting-btn {
+        border: 1px solid white;
+        background: transparent;
+        padding: 8px 10px;
+        color: white;
+        transition: all ease-out 0.2s;
+        &:hover {
+          border: 1px solid $mainPink;
+          background: $mainPink;
+          color: $mainBlack;
+          cursor: pointer;
+        }
+      }
+    }
+    .live-updates-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      margin-top: 25px;
+      button {
+        font-size: 16px;
+        padding: 8px 12px;
+        border: 0;
+      }
+      #live-updates {
+        background: transparent;
+        border: 1px $mainPink solid;
+        transition: all ease-out 0.1s;
+        margin-left: 30px;
+        color: white;
+        &:hover {
+          cursor: pointer;
+          background: $mainDarkPink;
+        }
+      }
+      #no-live-updates {
+        background: transparent;
+        border: 1px $mainPink solid;
+        margin-right: 30px;
+        color: white;
+        transition: all ease-out 0.1s;
+        &:hover {
+          cursor: pointer;
+          background: $mainDarkPink;
+        }
+      }
+      .no-live-updates {
+        background: white;
+        padding-left: 20px;
+      }
+      button[disabled] {
+        pointer-events: none;
+      }
+      #live-updates[disabled] {
+        color: $mainDarkGrey;
+        border: 1px $mainDarkGrey solid;
+      }
+      #no-live-updates[disabled] {
+        color: $mainDarkGrey;
+        border: 1px $mainDarkGrey solid;
+      }
+    }
+  }
+  .right {
+    border-left: solid 1px $mainPink;
+    letter-spacing: 1px;
+    .league-standing {
+      width: 290px;
+      display: block;
+      .name {
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: center;
+        width: 60%;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        color: $mainDarkGrey;
+        font-size: 14px;
+        margin-bottom: 5px;
+        .pos {
+          margin-left: 30px;
+        }
+        .team-name {
+          margin-left: 10px;
+        }
+        .played {
+          margin-left: 130px;
+        }
+        .points {
+          margin-left: 20px;
+        }
+      }
+      .team-standing-box {
+        font-size: 15px;
+        margin: 2px 20px 10px 20px;
+
+        .team-standing-row {
+          margin: 2px;
+          margin-bottom: 8px;
+          display: flex;
+          justify-content: space-between;
+          .team-rank-box {
+            display: flex;
+            font-weight: 300;
+            .team-rank {
+              width: 20px;
+              text-align: end;
+              margin-right: 10px;
+              color: $mainPink;
+            }
+          }
+          .data-div {
+            display: flex;
             align-items: center;
             justify-content: space-between;
-            padding:10px 0;
-            margin-top:25px;
-            button{
-                font-size:16px;
-                padding:8px 12px;
-                border:0;
-            
+            width: 50px;
+            .played-games {
+              margin-left: 0;
+              font-weight: 300;
+              color: $mainDarkGrey;
             }
-            #live-updates{
-                background:transparent;
-                border: 1px $mainPink solid;
-                transition: all ease-out 0.1s;
-                margin-left:30px;
-                color: white;
-                &:hover{
-                    cursor: pointer;
-                    background: $mainDarkPink;
-                }
-                
+            .team-points {
+              padding-left: 20px;
+              color: $mainPink;
             }
-            #no-live-updates{
-                background:transparent;
-                border: 1px $mainPink solid;
-                margin-right:30px;
-                color: white;
-                transition: all ease-out 0.1s;
-                &:hover{
-                    cursor: pointer;
-                    background: $mainDarkPink;
-                }
-            }
-            .no-live-updates{
-                background:white;
-                padding-left:20px;
-            }
-            button[disabled] { 
-                pointer-events: none;
-            }
-            #live-updates[disabled] { 
-                color: $mainDarkGrey;
-                border: 1px $mainDarkGrey solid;
-            }
-             #no-live-updates[disabled] { 
-                color: $mainDarkGrey;
-                border: 1px $mainDarkGrey solid;
-            }
-            
+          }
         }
-    }
-    .right{
-        border-left: solid 1px $mainPink; 
-        letter-spacing:1px;
-        .league-standing{
-            width:290px;
-            display:block;
-            .name{
-                margin:auto;
-                margin-top:15px;
-                margin-bottom:10px;
-                font-size:18px;
-                text-align: center;
-                width:60%;
-            }
-            .header{
-                display:flex;
-                align-items: center;
-                color:$mainDarkGrey;
-                font-size: 14px;
-                margin-bottom: 5px;
-                .pos{
-                    margin-left:30px;
-                }
-                .team-name{
-                    margin-left:10px;
-                }
-                .played{
-                    margin-left:130px;
-                }
-                .points{
-                    margin-left:20px;
-                }
-            }
-            .team-standing-box{
-                font-size:15px;
-                margin: 2px 20px 10px 20px;
-                
-                .team-standing-row{
-                    margin: 2px;
-                    margin-bottom:8px;
-                    display:flex;
-                    justify-content: space-between;
-                    .team-rank-box{
-                        display:flex;
-                        font-weight:300;
-                        .team-rank{
-                            width:20px;
-                            text-align: end;
-                            margin-right:10px;
-                            color: $mainPink;
-                        }
-                    }
-                    .data-div{
-                        display:flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        width:50px;
-                        .played-games{
-                            margin-left:0;
-                            font-weight:300;
-                            color:$mainDarkGrey;
-                        }
-                        .team-points{
-                            padding-left:20px;
-                            color: $mainPink;
-                        }
-                    }
-                }
-            }
+        .empty-response {
+          color: $mainDarkGrey;
+          text-align: center;
+          margin-top: 100px;
+          font-weight: 300;
         }
+      }
     }
+  }
 }

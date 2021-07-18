@@ -10,33 +10,41 @@ const renderStandings = () => {
     .get("./standings")
     .then((res) => {
       console.log(" - - - - - -", res);
-      const teamsArr = res.data.response[0].league.standings[0];
-      teamsArr.forEach((team, idx) => {
-        const teamDiv = document.createElement("div");
-        const teamRankBoxDiv = document.createElement("div");
-        const teamNameDiv = document.createElement("div");
-        const teamPointsDiv = document.createElement("div");
-        const teamGamesCountDiv = document.createElement("div");
-        const teamRankDiv = document.createElement("div");
-        const dataDiv = document.createElement("div");
+      if (res.data.response.length !== 0) {
+        const teamsArr = res.data.response[0].league.standings[0];
+        teamsArr.forEach((team, idx) => {
+          const teamDiv = document.createElement("div");
+          const teamRankBoxDiv = document.createElement("div");
+          const teamNameDiv = document.createElement("div");
+          const teamPointsDiv = document.createElement("div");
+          const teamGamesCountDiv = document.createElement("div");
+          const teamRankDiv = document.createElement("div");
+          const dataDiv = document.createElement("div");
 
-        teamNameDiv.innerText = team.team.name;
-        teamPointsDiv.innerText = team.points;
-        teamGamesCountDiv.innerText = team.all.played;
-        teamRankDiv.innerText = team.rank;
+          teamNameDiv.innerText = team.team.name;
+          teamPointsDiv.innerText = team.points;
+          teamGamesCountDiv.innerText = team.all.played;
+          teamRankDiv.innerText = team.rank;
 
-        teamDiv.classList.add("team-standing-row");
-        teamRankBoxDiv.classList.add("team-rank-box");
-        teamRankDiv.classList.add("team-rank");
-        teamGamesCountDiv.classList.add("played-games");
-        teamPointsDiv.classList.add("team-points");
-        dataDiv.classList.add("data-div");
+          teamDiv.classList.add("team-standing-row");
+          teamRankBoxDiv.classList.add("team-rank-box");
+          teamRankDiv.classList.add("team-rank");
+          teamGamesCountDiv.classList.add("played-games");
+          teamPointsDiv.classList.add("team-points");
+          dataDiv.classList.add("data-div");
 
-        teamRankBoxDiv.append(teamRankDiv, teamNameDiv);
-        dataDiv.append(teamGamesCountDiv, teamPointsDiv);
-        teamDiv.append(teamRankBoxDiv, dataDiv);
-        standingBoxDiv.append(teamDiv);
-      });
+          teamRankBoxDiv.append(teamRankDiv, teamNameDiv);
+          dataDiv.append(teamGamesCountDiv, teamPointsDiv);
+          teamDiv.append(teamRankBoxDiv, dataDiv);
+          standingBoxDiv.append(teamDiv);
+        });
+      } else {
+        const emptyResponseDiv = document.createElement("div");
+        emptyResponseDiv.innerText =
+          "Standings data is not available at this time...";
+        emptyResponseDiv.classList.add("empty-response");
+        standingBoxDiv.append(emptyResponseDiv);
+      }
     })
     .catch((err) => {
       console.log(err);
