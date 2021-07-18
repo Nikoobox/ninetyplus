@@ -12,7 +12,6 @@ const renderGames = (round) => {
     leagueInfoDiv.classList.add('left');
 
     axios.get(`./games?round=${round}`).then((res) => {
-        // console.log(res.data.response);
         const fixturesArr = res.data.response;
         const sectionNameDiv = document.createElement("div");
         sectionNameDiv.classList.add("section-name");
@@ -52,12 +51,10 @@ const renderGames = (round) => {
             </div>
         </div>
         `;
-{/* <i class="far fa-copyright"></i> <script type="text/javascript"> document.write(new Date().getFullYear());</script> by Nikolay Shatalov */}
         let currentRoundString = res.data.response[0].league.round;
         let currentRound = `${currentRoundString.split(' ').pop()} `;
         let prevRound = parseInt(currentRound) - 1;
         let nextRound = parseInt(currentRound) + 1;
-        // prevRound = (prevRound === 0) ? '' : `<< GO TO ROUND ${ prevRound}` ;
         sectionNameDiv.innerHTML = `
             <div class='roundPrev'>
                 <i class="fas fa-chevron-left"></i> GO TO ROUND ${ prevRound}
@@ -87,7 +84,6 @@ const renderGames = (round) => {
         const gameNotLiveStatus = ['NS', 'FT'];
         
         fixturesArr.forEach((fix, idx) => {
-            // console.log(fix);
             const team1 = fix.teams.home.name;
             const logo1 = fix.teams.home.logo;
             const team2 = fix.teams.away.name;
