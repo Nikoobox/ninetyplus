@@ -14,7 +14,7 @@ app.get("/", (request, res) => {
 
 app.get("/currentround", (req, res) => {
   fetch(
-    "https://v3.football.api-sports.io/fixtures/rounds?season=2021&league=39&current=true",
+    "https://v3.football.api-sports.io/fixtures/rounds?season=2022&league=39&current=true",
     {
       method: "GET",
       headers: {
@@ -24,6 +24,7 @@ app.get("/currentround", (req, res) => {
     }
   )
     .then((response) => {
+      console.log("response.text()", response.text());
       return response.text();
     })
     .then((body) => {
@@ -38,7 +39,7 @@ app.get("/currentround", (req, res) => {
 app.get("/games", (req, res) => {
   console.log(req.query);
   fetch(
-    `https://v3.football.api-sports.io/fixtures?league=39&season=2021&round=${req.query.round}`,
+    `https://v3.football.api-sports.io/fixtures?league=39&season=2022&round=${req.query.round}`,
     {
       method: "GET",
       headers: {
@@ -60,7 +61,7 @@ app.get("/games", (req, res) => {
 });
 
 app.get("/standings", (req, res) => {
-  fetch("https://v3.football.api-sports.io/standings?league=39&season=2021", {
+  fetch("https://v3.football.api-sports.io/standings?league=39&season=2022", {
     method: "GET",
     headers: {
       "x-rapidapi-host": "v3.football.api-sports.io",
