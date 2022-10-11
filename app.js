@@ -4,7 +4,15 @@ const path = require("path");
 const fetch = require("node-fetch");
 require("dotenv").config();
 
+// to run app
+// npm start app
+// http://localhost:8000/
+
 const PORT = process.env.PORT || 8000; // process.env accesses heroku's environment variables
+
+const dateYear = new Date().getFullYear();
+const mon = new Date().getMonth();
+const dateYearNorm = dateYear % 2 === 0 && mon >= 8 ? dateYear : dateYear - 1;
 
 app.use(express.static("dist"));
 
@@ -12,9 +20,30 @@ app.get("/", (request, res) => {
   res.sendFile(path.join(__dirname, "./dist/index.html"));
 });
 
+app.get("/leagues/seasons", (req, res) => {
+  fetch(`https://v3.football.api-sports.io`, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": `${process.env.API_KEY}`,
+    },
+  })
+    .then((response) => {
+      console.log("season is: ", season);
+      return response.text();
+    })
+    .then((body) => {
+      let results = JSON.parse(body);
+      res.send(results); // sends to frontend
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.get("/currentround", (req, res) => {
   fetch(
-    "https://v3.football.api-sports.io/fixtures/rounds?season=2022&league=39&current=true",
+    `https://v3.football.api-sports.io/fixtures/rounds?season=${dateYearNorm}&league=39&current=true`,
     {
       method: "GET",
       headers: {
@@ -24,7 +53,6 @@ app.get("/currentround", (req, res) => {
     }
   )
     .then((response) => {
-      console.log("response.text()", response.text());
       return response.text();
     })
     .then((body) => {
@@ -39,7 +67,7 @@ app.get("/currentround", (req, res) => {
 app.get("/games", (req, res) => {
   console.log(req.query);
   fetch(
-    `https://v3.football.api-sports.io/fixtures?league=39&season=2022&round=${req.query.round}`,
+    `https://v3.football.api-sports.io/fixtures?league=39&season=${dateYearNorm}&round=${req.query.round}`,
     {
       method: "GET",
       headers: {
@@ -61,13 +89,16 @@ app.get("/games", (req, res) => {
 });
 
 app.get("/standings", (req, res) => {
-  fetch("https://v3.football.api-sports.io/standings?league=39&season=2022", {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "v3.football.api-sports.io",
-      "x-rapidapi-key": `${process.env.API_KEY}`,
-    },
-  })
+  fetch(
+    `https://v3.football.api-sports.io/standings?league=39&season=${dateYearNorm}`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": `${process.env.API_KEY}`,
+      },
+    }
+  )
     .then((response) => {
       return response.text();
     })
@@ -96,7 +127,6 @@ app.get("/game", (req, res) => {
     })
     .then((body) => {
       let results = JSON.parse(body);
-      // console.log(results); // logs to server
       res.send(results); // sends to frontend
     })
     .catch((err) => {
