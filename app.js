@@ -7,6 +7,7 @@ require("dotenv").config();
 // to run app
 // npm start app
 // http://localhost:8000/
+// git push heroku master
 
 const PORT = process.env.PORT || 8000; // process.env accesses heroku's environment variables
 
