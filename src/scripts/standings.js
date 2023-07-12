@@ -9,7 +9,7 @@ const renderStandings = () => {
   axios
     .get("./standings")
     .then((res) => {
-      console.log(" - - - - - -", res);
+      console.log(" renderStandings res", res);
       if (res.data.response.length !== 0) {
         const teamsArr = res.data.response[0].league.standings[0];
         teamsArr.forEach((team, idx) => {

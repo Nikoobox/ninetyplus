@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 8000; // process.env accesses heroku's environm
 
 const dateYear = new Date().getFullYear();
 const mon = new Date().getMonth();
-const dateYearNorm = dateYear % 2 === 0 && mon >= 8 ? dateYear : dateYear - 1;
+const dateYearNorm =
+  dateYear % 2 === 0 || mon + 1 >= 7 ? dateYear : dateYear - 1;
+console.log("fetching year", dateYearNorm);
 
 app.use(express.static("dist"));
 
@@ -66,7 +68,6 @@ app.get("/currentround", (req, res) => {
 });
 
 app.get("/games", (req, res) => {
-  console.log(req.query);
   fetch(
     `https://v3.football.api-sports.io/fixtures?league=39&season=${dateYearNorm}&round=${req.query.round}`,
     {
@@ -183,7 +184,4 @@ app.get("/fixture_players_stat", (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-  // console.log(__dirname);
-  // console.log(`listening on ${PORT}`);
-});
+app.listen(PORT, () => {});

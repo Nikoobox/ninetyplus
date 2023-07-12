@@ -54,6 +54,7 @@ const renderGames = (round) => {
         </div>
         `;
       let currentRoundString = res.data.response[0].league.round;
+      console.log("currentRoundString", currentRoundString);
       let currentRound = `${currentRoundString.split(" ").pop()} `;
       let prevRound = parseInt(currentRound) - 1;
       let nextRound = parseInt(currentRound) + 1;
@@ -78,7 +79,7 @@ const renderGames = (round) => {
       prevRound !== 0
         ? previousRound.addEventListener("click", () => renderGames(pRound))
         : "";
-      // previousRound.addEventListener('click', () => renderGames(pRound));
+
       nextRound === 38
         ? ""
         : followingRound.addEventListener("click", () => renderGames(nRound));
