@@ -1,6 +1,5 @@
 import "./styles/index.scss";
 import currentRound from "./scripts/currentRound";
-import renderStandings from "./scripts/standings";
 import openInstructionsModal from "./scripts/openInstructionsModal";
 
 window.addEventListener("DOMContentLoaded", () => {

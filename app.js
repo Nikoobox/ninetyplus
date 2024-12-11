@@ -184,4 +184,6 @@ app.get("/fixture_players_stat", (req, res) => {
     });
 });
 
-app.listen(PORT, () => {});
+app.listen(PORT, () => {
+  console.log(`listening on port: ${PORT}`);
+});
