@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node": ">=18 <=20"
+    "node": ">=18"
   },
   "browserslist": [
     "last 1 version",
@@ -14,11 +14,11 @@
   ],
   "scripts": {
     "start": "node app.js",
-    "build": "webpack --config webpack.prod.js --optimize-minimize",
+    "build": "webpack --config webpack.prod.js",
     "start:debug": "DEBUG=* node app.js",
     "webpack:start": "webpack-dev-server --config webpack.dev.js",
     "webpack:watch": "webpack --watch --config webpack.dev.js",
-    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
+    "webpack:build": "webpack --config webpack.prod.js"
   },
   "author": "Nikolay Shatalov",
   "license": "ISC",
@@ -39,11 +39,11 @@
     "url-loader": "^4.1.1",
     "vercel": "^50.1.3",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
     "axios": "^0.21.0",
     "d3-scale": "^3.2.3",
     "dotenv": "^8.2.0",
