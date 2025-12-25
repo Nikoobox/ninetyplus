@@ -1,18 +1,20 @@
+@use "./_colors.scss" as *;
+
 .modal-v {
-  display: none; 
-  position: fixed; 
-  z-index: 10; 
-  padding: 10%; 
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding: 10%;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
   /* Modal Content */
   .modal-v-content {
-    position:relative;
+    position: relative;
     margin: auto;
     padding: 20px;
     width: 760px;
@@ -20,19 +22,19 @@
     -webkit-animation-duration: 0.6s;
     animation-name: animate2;
     animation-duration: 0.6s;
-    border-radius:10px;
+    border-radius: 10px;
     background: $mainLightBlack;
-    color:white;
+    color: white;
     /* The Close Logic */
     .close-v {
       color: white;
-    //   float: right;
+      //   float: right;
       font-size: 50px;
       font-weight: 300;
       transition: 0.1s all ease;
       position: absolute;
-      right:20px;
-      top:0;
+      right: 20px;
+      top: 0;
       &:hover,
       &:focus {
         color: $mainPink;
@@ -42,75 +44,82 @@
     }
 
     // VOTE MODAL CONTENT
-    #modal-v-box{
-        .teams-row{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            margin-right:20px;
-            .message{
-              padding: 0 20px;
-            }
-            .btn-box{
-                width:180px;
-                margin:10px;
-                #voteNum1{
-                    background:white;
-                    padding:8px 12px;
-                    font-size: 18px;
-                    width:100%;
-                    transition: 0.2s all ease-out;
-                    &:hover{
-                        cursor: pointer;
-                        background:$mainPink;
-                    }
-                }
-                #voteNum2{
-                    background:white;
-                    padding:8px 12px;
-                    font-size: 18px;
-                    width:100%;
-                    transition: 0.2s all ease-out;
-                    &:hover{
-                        cursor: pointer;
-                        background:$mainBlack;
-                        color:white;
-                    }
-                }
-            }
+    #modal-v-box {
+      .teams-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        .message {
+          padding: 0 20px;
         }
-        #voting-box{
-            color:white;
-            display:flex;
-            flex-direction:column;
-            align-items: center;
-            justify-content: center;
-            // margin-right:20px;
-            .voting-row{
-                margin:20px 20px 10px 0;
-                display:flex;
-                align-items: center;
-                .vote{
-                    margin: 0 140px;
-                    font-size: 28px;
-                }
+        .btn-box {
+          width: 180px;
+          margin: 10px;
+          #voteNum1 {
+            background: white;
+            padding: 8px 12px;
+            font-size: 18px;
+            width: 100%;
+            transition: 0.2s all ease-out;
+            &:hover {
+              cursor: pointer;
+              background: $mainPink;
             }
-            #pie-box{
-              width:320px;
+          }
+          #voteNum2 {
+            background: white;
+            padding: 8px 12px;
+            font-size: 18px;
+            width: 100%;
+            transition: 0.2s all ease-out;
+            &:hover {
+              cursor: pointer;
+              background: $mainBlack;
+              color: white;
             }
+          }
         }
+      }
+      #voting-box {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // margin-right:20px;
+        .voting-row {
+          margin: 20px 20px 10px 0;
+          display: flex;
+          align-items: center;
+          .vote {
+            margin: 0 140px;
+            font-size: 28px;
+          }
+        }
+        #pie-box {
+          width: 320px;
+        }
+      }
     }
   }
 }
 
 /* Add Animation */
 @-webkit-keyframes animate2 {
-  from {opacity:0} 
-  to {opacity:1}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes animate2 {
-  from {opacity:0}
-  to {opacity:1}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-

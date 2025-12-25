@@ -1,9 +1,9 @@
-@import "./_colors.scss";
-@import "./reset.scss";
-@import "./navbar.scss";
-@import './main.scss';
-@import './game.scss';
-@import './gamestat.scss';
-@import './modal.scss';
-@import './modalVoting.scss';
-@import './instructions.scss';
+@use "./_colors.scss" as *;
+@use "./reset.scss" as *;
+@use "./navbar.scss" as *;
+@use "./main.scss" as *;
+@use "./game.scss" as *;
+@use "./gamestat.scss" as *;
+@use "./modal.scss" as *;
+@use "./modalVoting.scss" as *;
+@use "./instructions.scss" as *;
