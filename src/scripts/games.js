@@ -45,7 +45,7 @@ const renderGames = (round) => {
 
             <div class='by-ns'>
                 <div class='at-year'>
-                    <i class="far fa-copyright"></i>${new Date().getFullYear()}
+                    <i class="far fa-copyright"></i>2021-${new Date().getFullYear()}
                 </div>
                 <div class='name'>
                     <a href='https://nikolayshatalov.com/' rel='noopener noreferrer' target="_blank">by Nikolay Shatalov</a>
