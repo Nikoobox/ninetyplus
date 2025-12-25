@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=18 <=20"
   },
   "browserslist": [
     "last 1 version",
@@ -14,11 +14,11 @@
   ],
   "scripts": {
     "start": "node app.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js --optimize-minimize",
     "start:debug": "DEBUG=* node app.js",
     "webpack:start": "webpack-dev-server --config webpack.dev.js",
     "webpack:watch": "webpack --watch --config webpack.dev.js",
-    "webpack:build": "webpack --config webpack.prod.js"
+    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
   },
   "author": "Nikolay Shatalov",
   "license": "ISC",
