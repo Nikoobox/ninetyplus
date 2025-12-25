@@ -13,6 +13,7 @@
     "not dead"
   ],
   "scripts": {
+    "prebuild": "yarn install",
     "start": "node app.js",
     "build": "npx webpack --config webpack.prod.js",
     "start:debug": "DEBUG=* node app.js",
