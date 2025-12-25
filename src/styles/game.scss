@@ -1,137 +1,144 @@
-#one-game{
-    margin:10px 15px;
-    display:flex;
-    align-items: space-between;
-    justify-content: space-between;
-    letter-spacing: 0.5px;
-    .squad-box{
-        margin-left:15px;
-        width:25%;
-        display:flex;
-        flex-direction: column;
-        
-        #team-1-box{
-            .team-1-header-box{
-                display:flex;
-                align-items: center;
-                margin-bottom: 3px;
-                .name{
-                    font-size: 18px;
-                    border-bottom: 4px solid white;
-                }
-                .logo{
-                    img{
-                        width:30px;
-                        margin-left:10px;
-                    }
-                }
-            }
-            .team-1{
-                margin-bottom:4px;
-                font-size:15px;
-                display:flex;
-                .number{width:30px; color:$mainDarkGrey}
-            }
-        }
-        #team-2-box{
-            margin-top:20px;
-            .team-2-header-box{
-                display:flex;
-                align-items: center;
-                margin-bottom: 3px;
-                .name{
-                    font-size: 18px;
-                    border-bottom: 4px solid $mainPink;
-                }
-                .logo{
-                    img{
-                        width:30px;
-                        margin-left:10px;
-                    }
-                }
-            }
-            .team-2{
-                margin-bottom:4px;
-                font-size:15px;
-                display:flex;
-                .number{width:30px;color:$mainDarkGrey}
-            }
-        }
-    }
-    .field-box{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width:45%;
-        .field-img{
-            position:relative;
-            .rows{
-                height:55px;
-                width:100%;
-                display:flex;
-                justify-content: space-evenly;
-                align-items: center;
-                position:absolute;
-            }
-            .image{
-                width:330px;
-                height: 440px;
-            }
-            #gk-1{
-                top:0;
-            }
-            #def-1{
-                top:55px;
-            }
-            #mid-1{
-                top:110px;
-            }
-            #fwd-1{
-                top:165px;
-            }
-            #fwd-2{
-                top:220px;
-            }
-            #mid-2{
-                top:275px;
-            }
-            #def-2{
-                top:330px;
-            }
-            #gk-2{
-                top:385px;
-            }
-            
-            .pl1{
-                font-size:18px;
-                background: $mainBlack;
-                color:white;
-                border-radius:50%;
-                width:35px;
-                height:35px;
-                line-height: 35px;
-                text-align:center;
-            }
-            .pl2{
-                font-size:18px;
-                background: $mainPink;
-                color:$mainBlack;
-                border-radius:50%;
-                width:35px;
-                height:35px;
-                line-height: 35px;
-                text-align:center;
-            }
-            .pl-select{
-                transition: 0.2s all ;
-                &:hover{
-                    cursor: pointer;
-                    transform: translateY(-5%);
-                    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, .4);
-                }
-            }
-        }
-    }
-}
+@use "./_colors.scss" as *;
 
+#one-game {
+  margin: 10px 15px;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  letter-spacing: 0.5px;
+  .squad-box {
+    margin-left: 15px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+
+    #team-1-box {
+      .team-1-header-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        .name {
+          font-size: 18px;
+          border-bottom: 4px solid white;
+        }
+        .logo {
+          img {
+            width: 30px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .team-1 {
+        margin-bottom: 4px;
+        font-size: 15px;
+        display: flex;
+        .number {
+          width: 30px;
+          color: $mainDarkGrey;
+        }
+      }
+    }
+    #team-2-box {
+      margin-top: 20px;
+      .team-2-header-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        .name {
+          font-size: 18px;
+          border-bottom: 4px solid $mainPink;
+        }
+        .logo {
+          img {
+            width: 30px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .team-2 {
+        margin-bottom: 4px;
+        font-size: 15px;
+        display: flex;
+        .number {
+          width: 30px;
+          color: $mainDarkGrey;
+        }
+      }
+    }
+  }
+  .field-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    .field-img {
+      position: relative;
+      .rows {
+        height: 55px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+      }
+      .image {
+        width: 330px;
+        height: 440px;
+      }
+      #gk-1 {
+        top: 0;
+      }
+      #def-1 {
+        top: 55px;
+      }
+      #mid-1 {
+        top: 110px;
+      }
+      #fwd-1 {
+        top: 165px;
+      }
+      #fwd-2 {
+        top: 220px;
+      }
+      #mid-2 {
+        top: 275px;
+      }
+      #def-2 {
+        top: 330px;
+      }
+      #gk-2 {
+        top: 385px;
+      }
+
+      .pl1 {
+        font-size: 18px;
+        background: $mainBlack;
+        color: white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+      }
+      .pl2 {
+        font-size: 18px;
+        background: $mainPink;
+        color: $mainBlack;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+      }
+      .pl-select {
+        transition: 0.2s all;
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-5%);
+          box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+}
