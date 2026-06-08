@@ -1,4 +1,4 @@
-import axios from "axios";
+import fetchData from "./fetchData";
 
 const renderGameStat = (fixtureId, score1, score2, FixturePlayersStat) => {
     // console.log('HI FROM GAME STAT');
@@ -7,7 +7,7 @@ const renderGameStat = (fixtureId, score1, score2, FixturePlayersStat) => {
     const standingsDiv = document.getElementById("standings")
     // const testBoxDiv = document.createElement("div");
     // testBoxDiv.classList.add("test-box");
-    axios.get(`/gamestat/?fixtureId=${fixtureId}`).then((res) => {
+    fetchData(`/gamestat/?fixtureId=${fixtureId}`).then((res) => {
         // console.log(res.data.response);
         const gameStatDiv = document.createElement('div');
         gameStatDiv.classList.add('game-stat-box');

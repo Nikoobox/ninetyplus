@@ -43,7 +43,6 @@
     "webpack": "^4.44.2"
   },
   "dependencies": {
-    "axios": "^0.21.0",
     "d3-scale": "^3.2.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

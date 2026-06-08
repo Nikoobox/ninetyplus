@@ -1,4 +1,4 @@
-import axios from "axios";
+import fetchData from "./fetchData";
 
 const renderStandings = () => {
   const standingsDiv = document.getElementById("standings");
@@ -6,8 +6,7 @@ const renderStandings = () => {
   standingBoxDiv.classList.add("team-standing-box");
   standingsDiv.append(standingBoxDiv);
 
-  axios
-    .get("./standings")
+  fetchData("./standings")
     .then((res) => {
       console.log(" renderStandings res", res);
       if (res.data.response.length !== 0) {

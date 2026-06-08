@@ -1,52 +1,49 @@
-
 @use "./_colors.scss" as *;
 
-
-.navbar{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background:$mainBlack;
-    color:rgb(255, 255, 255);
-    height:60px;
-    padding: 30px 30px 10px;
-    letter-spacing:1px;
-    @media (min-width: 1600px) {
-        padding: 30px 50px 10px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $mainBlack;
+  color: rgb(255, 255, 255);
+  height: 60px;
+  padding: 30px 30px 10px;
+  letter-spacing: 1px;
+  @media (min-width: 1600px) {
+    padding: 30px 50px 10px;
+  }
+  .logo-box {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    transition: all 0.1s ease-out;
+    &:hover {
+      cursor: pointer;
+      color: $mainPink;
     }
-    .logo-box{
-        font-size:32px;
-        font-weight:600;
-        letter-spacing:0.6px;
-        transition: all 0.1s ease-out;
-        &:hover{
-            cursor: pointer;
-            color:$mainPink;
-        }
+  }
+  .links {
+    display: flex;
+    font-size: 18px;
+    #instructions-link {
+      color: $mainDarkGrey;
+      font-weight: 300;
+      transition: all 0.1s ease-out;
+      &:hover {
+        cursor: pointer;
+        color: $mainPink;
+      }
     }
-    .links{
-        display:flex;
-        font-size:18px;
-        #instructions-link{
-            color:$mainDarkGrey;
-            font-weight: 300;
-            transition: all 0.1s ease-out;
-            &:hover{
-                cursor: pointer;
-                color:$mainPink;
-            }
-        }
-        a{
-            text-decoration: none;
-            color:#ffffff;
-            margin-left:30px;
-            font-weight: 300;
-            transition: all 0.1s ease-out;
-            &:hover{
-                cursor: pointer;
-                color:$mainPink;
-            }
-        }
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      margin-left: 30px;
+      font-weight: 300;
+      transition: all 0.1s ease-out;
+      &:hover {
+        cursor: pointer;
+        color: $mainPink;
+      }
     }
-    
+  }
 }

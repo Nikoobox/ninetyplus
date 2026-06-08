@@ -1,4 +1,4 @@
-import axios from "axios";
+import fetchData from "./fetchData";
 import field from "../../assets/field.png";
 import renderGameStat from "./gamestat";
 import getFixturePlayersStat from "./getFixturePlayersStat";
@@ -13,8 +13,7 @@ const renderGameById = (fixtureId, score1, score2) => {
   const allGamesContentDiv = document.getElementById("all-games");
   allGamesContentDiv.innerHTML = "<div id='one-game'></div>";
 
-  axios
-    .get(`./game?fixtureId=${fixtureId}`)
+  fetchData(`./game?fixtureId=${fixtureId}`)
     .then((res) => {
       //clear live updates interval and local storage
       clearInterval(localStorage.getItem("localStInterval"));
