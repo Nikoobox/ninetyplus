@@ -1,10 +1,9 @@
-import axios from "axios";
+import fetchData from "./fetchData";
 import renderGames from "./games";
 import renderStandings from "./standings";
 
 const currentRound = () => {
-  axios
-    .get(`currentround`)
+  fetchData(`currentround`)
     .then((res) => {
       const currentR = res.data.response[0];
 

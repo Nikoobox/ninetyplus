@@ -1,4 +1,4 @@
-import axios from "axios";
+import fetchData from "./fetchData";
 import renderGameById from "./game";
 import renderVotingModal from "./renderVotingModal";
 import gamesRefresh from "./gamesRefresh";
@@ -11,8 +11,7 @@ const renderGames = (round) => {
   const leagueInfoDiv = document.getElementById("league-info");
   leagueInfoDiv.classList.add("left");
 
-  axios
-    .get(`./games?round=${round}`)
+  fetchData(`./games?round=${round}`)
     .then((res) => {
       const fixturesArr = res.data.response;
       const sectionNameDiv = document.createElement("div");
